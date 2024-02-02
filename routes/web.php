@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BillingAdressController;
 use App\Http\Controllers\CompetitionController;
+use App\Http\Controllers\GenerateInvoiceController;
 use App\Http\Controllers\TeamsController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,10 @@ Route::resources(
         'billingadress' => BillingAdressController::class,
     ]
 );
+
+Route::get('generate-invoice', GenerateInvoiceController::class)
+    ->middleware(['auth'])
+    ->name('generate-invoice');
 
 
 Route::view('profile', 'profile')
