@@ -14,8 +14,15 @@ return new class extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('department_id');
-            $table->foreign('department_id')->references('id')->on('departments');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('number_of_members');
+            $table->unsignedBigInteger('competition_id');
+            $table->foreign('competition_id')->references('id')->on('competitions');
+            $table->integer('number_of_robots_but1')->nullable();
+            $table->integer('number_of_robots_but2')->nullable();
+            $table->integer('number_of_robots_but3')->nullable();
+            $table->integer('number_of_teachers')->nullable();
             $table->timestamps();
         });
     }

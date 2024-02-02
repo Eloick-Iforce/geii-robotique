@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('state');
             $table->string('zip_code');
             $table->string('country');
+            $table->string('etablisement');
+            $table->string('name');
+            $table->string('lastname');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
