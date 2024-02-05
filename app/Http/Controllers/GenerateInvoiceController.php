@@ -31,7 +31,7 @@ class GenerateInvoiceController extends Controller
         }
 
         $pdf = PDF::loadView('invoices.show', ['team' => $team, 'billingAddress' => $billingAddress]);
-        $pdf->save(storage_path('invoices/' . $team->name . '-' . now() . '.pdf'));
+        $pdf->save(storage_path('invoices/' . $team->name . '-' . now()->format('Y-m-d') . '.pdf'));
 
 
         return redirect()->route('teams.index')->with('message', "L'envoi de la facture pour l'équipe $team->name a bien été effectué.");
