@@ -29,7 +29,7 @@
             font-size: 20px;
         }
         p {
-            color: #999;
+            color: #000000;
             font-size: 16px;
         }
         div {

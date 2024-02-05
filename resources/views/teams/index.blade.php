@@ -17,6 +17,16 @@
                             Ajouter une équipe
                           </a>
                           @endif
+
+                              @if (session('message'))
+                                     <div class="bg-green-300 border-t-4 border-green-600 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
+                                          <div class="flex">
+                                               <div>
+                                               <p class="text-sm">{{ session('message') }}</p>
+                                               </div>
+                                          </div>
+                                     </div>
+                              @endif
     
                           <table class="table-auto w-full mt-6">
                             <thead>
@@ -41,13 +51,16 @@
                                              <td class="border px-4 py-2">{{ $team->number_of_teachers }}</td>
                                              <td class="border px-4 py-2">{{ $team->competition->name }}</td>
                                       <td class="border px-4 py-2 flex justify-center">
-                                             <a href="{{ route('teams.show', $team->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">
-                                                  Voir
-                                             </a>
+
+                                        <a href="{{ route('invoices.show', $team->id) }}" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">
+                                             Facture {{ $team->id}}
+                                        </a>
+
+                                        <a href="{{ route('invoices.mail', $team->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">
+                                             Envoyer la facture
+                                        </a>
+
                                         @if (Auth::user()->role == 'admin')
-                                             <a href="{{ route('teams.edit', $team->id) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mr-4 rounded">
-                                                  Modifier
-                                             </a>
                                              <form action="{{ route('teams.destroy', $team->id) }}" method="POST" class="inline-block">
                                                   @csrf
                                                   @method('DELETE')
