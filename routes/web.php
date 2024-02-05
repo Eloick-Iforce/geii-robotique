@@ -7,6 +7,7 @@ use App\Http\Controllers\TeamsController;
 use App\Mail\Factures;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use TeamTeaTime\Forum\Support\Web\Forum;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::resources([
 
 Route::get(('billingadress/{billingAddress}/edit'), [BillingAdressController::class, 'edit'])
     ->name('billingadress.edit');
+
 
 
 

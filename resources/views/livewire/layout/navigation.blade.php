@@ -33,11 +33,14 @@ new class extends Component
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('competitions.index')" :active="request()->routeIs('competitions.index')" wire:navigate>
-                        {{ __('Competitions') }}
+                    <x-nav-link :href="route('competitions.index')" :active="request()->routeIs('competitions/*')" wire:navigate>
+                        {{ __('Compétitions') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('teams.index')" :active="request()->routeIs('teams.index')" wire:navigate>
-                        {{ __('Teams') }}
+                    <x-nav-link :href="route('teams.index')" :active="request()->routeIs('teams/*')" wire:navigate>
+                        {{ __('Équipes') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('forum.index')" :active="request()->routeIs('forum/*')" wire:navigate>
+                        {{ __('Forum') }}
                     </x-nav-link>
                 </div>
             </div>
