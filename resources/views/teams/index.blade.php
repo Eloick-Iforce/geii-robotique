@@ -41,7 +41,7 @@
                             <tbody>
                                  @if($teams->isEmpty())
                                  <tr>
-                                      <td class="border px-4 py-2 text-center" colspan="4">Aucune équipe</td>
+                                      <td class="border px-4 py-2 text-center" colspan="5">Aucune équipe</td>
                                  </tr>
                                  @else
                                  @foreach ($teams as $team)
