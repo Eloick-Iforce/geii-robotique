@@ -51,8 +51,16 @@
                             <a href="{{ route('billingadress.edit', Auth::user()->billing_address) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                 Modifier mon adresse de facturation
                             </a>
+                            <form action="{{ route('billingadress.destroy') }}" method="POST" class="mt-4">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="id_billing" value="{{Auth::user()->billing_address->id}}">
+                                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                    Supprimer mon adresse de facturation
+                                </button>
+                            </form>
                         @else
-                            <p class="text-xl">Vous n'avez pas d'adresse de facturation associée, merci d'en rajouter une</p>
+                            <p class="text-xl mb-8">Vous n'avez pas d'adresse de facturation associée, merci d'en rajouter une</p>
                             <a href="{{ route('billingadress.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                 Ajouter une adresse de facturation
                             </a>

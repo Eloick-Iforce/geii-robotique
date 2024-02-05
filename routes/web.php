@@ -4,6 +4,8 @@ use App\Http\Controllers\BillingAdressController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\GenerateInvoiceController;
 use App\Http\Controllers\TeamsController;
+use App\Mail\Factures;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,11 +33,20 @@ Route::resources([
     'teams' => TeamsController::class,
 ]);
 
+Route::get(('billingadress/{billingAddress}/edit'), [BillingAdressController::class, 'edit'])
+    ->name('billingadress.edit');
+
+
+
 Route::resources(
     [
         'billingadress' => BillingAdressController::class,
     ]
 );
+
+Route::get(('billingadress/destroy'), [BillingAdressController::class, 'destroy'])
+    ->name('billingadress.destroy');
+
 
 
 Route::get('invoices/{team}', [GenerateInvoiceController::class, 'show'])
@@ -43,6 +54,12 @@ Route::get('invoices/{team}', [GenerateInvoiceController::class, 'show'])
 
 Route::get('invoices/{team}/mail', [GenerateInvoiceController::class, 'mail'])
     ->name('invoices.mail');
+
+
+Route::get('/mail', function () {
+
+    Mail::to('eloick.mickisz@proton.me')->send(new Factures('team', 'billingAddress', 'user'));
+});
 
 
 
