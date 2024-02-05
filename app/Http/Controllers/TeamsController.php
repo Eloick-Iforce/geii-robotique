@@ -40,9 +40,6 @@ class TeamsController extends Controller
     public function store(TeamRequest $request)
     {
         $data = $request->validated();
-        /*$team = new Team();
-        $team->fill($data);
-        $team->save();*/
         Team::create([
             'name' => $data['name'],
             'user_id' => auth()->id(),

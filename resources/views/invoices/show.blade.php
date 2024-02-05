@@ -29,7 +29,7 @@
             font-size: 20px;
         }
         p {
-            color: #999;
+            color: #000000;
             font-size: 16px;
         }
         div {
@@ -59,7 +59,7 @@ $total = $totalprof + $totaletu + $total_cost;
 @endphp
 
     <h2>
-        Devis pour la rencontre de Robotique 2024 de Haguenau à la date du {{ now()->format('d/m/Y') }}
+        Devis pour la rencontre de Robotique 2024 de Haguenau à la date du {{ now()->format('d/m/Y') }} pour la compétition {{ $team->competition->name }}
     </h2>
     <div>
         <div>

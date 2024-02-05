@@ -37,9 +37,13 @@ Route::resources(
     ]
 );
 
-Route::get('generate-invoice', GenerateInvoiceController::class)
-    ->middleware(['auth'])
-    ->name('generate-invoice');
+
+Route::get('invoices/{team}', [GenerateInvoiceController::class, 'show'])
+    ->name('invoices.show');
+
+Route::get('invoices/{team}/mail', [GenerateInvoiceController::class, 'mail'])
+    ->name('invoices.mail');
+
 
 
 Route::view('profile', 'profile')
