@@ -36,7 +36,6 @@ class GenerateInvoiceController extends Controller
         $pdf->save(public_path('invoices/' . $fileName));
 
 
-
         Resend::emails($fileName)->send([
             'from' => 'GEII Rencontres Robotique <geii-robotique@resend.dev>',
             'to' => [auth()->user()->email],
@@ -44,13 +43,12 @@ class GenerateInvoiceController extends Controller
             'attachments' => [
                 [
                     'content' => "Voici votre facture pour l'équipe " . $team->name . ".",
+                    'filename' => $fileName,
                     'path' => asset('invoices/' . $fileName),
-                    'name' => "Facture.pdf",
                 ]
             ],
             'html' => view('invoices.mail')->render(),
         ]);
-
         return redirect()->route('teams.index')->with('message', "L'envoi de la facture pour l'équipe $team->name a bien été effectué.");
     }
 
