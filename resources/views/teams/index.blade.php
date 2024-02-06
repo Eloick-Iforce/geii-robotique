@@ -12,7 +12,7 @@
                    <h2 class="text-2xl font-bold">Bienvenue {{ Auth::user()->name }}</h2>
 
                      <div class="mt-6">
-                          @if (Auth::user()->role == 'admin')
+                          @if (Auth::user())
                           <a href="{{ route('teams.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Ajouter une équipe
                           </a>

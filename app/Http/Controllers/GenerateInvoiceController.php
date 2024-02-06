@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Resend\Laravel\Facades\Resend;
 
 class GenerateInvoiceController extends Controller
 {
@@ -26,13 +27,29 @@ class GenerateInvoiceController extends Controller
     {
         $billingAddress = auth()->user()->billing_address;
 
-        if (!file_exists(storage_path('invoices'))) {
-            mkdir(storage_path('invoices'), 0777, true);
+        if (!file_exists(public_path('invoices'))) {
+            mkdir(public_path('invoices'), 0777, true);
         }
 
         $pdf = PDF::loadView('invoices.show', ['team' => $team, 'billingAddress' => $billingAddress]);
-        $pdf->save(storage_path('invoices/' . $team->name . '-' . now()->format('Y-m-d') . '.pdf'));
+        $fileName = $team->name . '-' . now()->format('Y-m-d') . '.pdf';
+        $pdf->save(public_path('invoices/' . $fileName));
 
+
+
+        Resend::emails($fileName)->send([
+            'from' => 'GEII Rencontres Robotique <geii-robotique@resend.dev>',
+            'to' => [auth()->user()->email],
+            'subject' => 'Voici votre facture pour l\'équipe ' . $team->name,
+            'attachments' => [
+                [
+                    'content' => "Voici votre facture pour l'équipe " . $team->name . ".",
+                    'path' => asset('invoices/' . $fileName),
+                    'name' => "Facture.pdf",
+                ]
+            ],
+            'html' => view('invoices.mail')->render(),
+        ]);
 
         return redirect()->route('teams.index')->with('message', "L'envoi de la facture pour l'équipe $team->name a bien été effectué.");
     }

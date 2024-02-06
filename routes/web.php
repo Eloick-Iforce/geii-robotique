@@ -58,10 +58,6 @@ Route::get('invoices/{team}/mail', [GenerateInvoiceController::class, 'mail'])
     ->name('invoices.mail');
 
 
-Route::get('/mail', function () {
-
-    Mail::to('eloick.mickisz@proton.me')->send(new Factures('team', 'billingAddress', 'user'));
-});
 
 
 

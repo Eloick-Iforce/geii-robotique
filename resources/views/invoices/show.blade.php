@@ -40,11 +40,13 @@
 @php
 $robots_but1 = $team->number_of_robots_but1;
 $robots_but2 = $team->number_of_robots_but2;
+$robots_but3 = $team->number_of_robots_but3;
 
 $cost_but1 = ($robots_but1 > 0 ? 150 : 0) + 50 * ($robots_but1 - 1 > 0 ? $robots_but1 - 1 : 0);
 $cost_but2 = ($robots_but2 > 0 ? 150 : 0) + 50 * ($robots_but2 - 1 > 0 ? $robots_but2 - 1 : 0);
+$cost_but3 = ($robots_but3 > 0 ? 150 : 0) + 50 * ($robots_but3 - 1 > 0 ? $robots_but3 - 1 : 0);
 
-$total_cost = $cost_but1 + $cost_but2;
+$total_cost = $cost_but1 + $cost_but2 + $cost_but3;
 
 $totaletu = 0;
         if ($team->number_of_members <= 6) {
@@ -92,7 +94,7 @@ $total = $totalprof + $totaletu + $total_cost;
                 <tr>
                     <td>Robots BUT 3</td>
                     <td>{{ $team->number_of_robots_but3 }}</td>
-                    <td>0 €</td>
+                    <td>{{ $cost_but3 }} €</td>
                 </tr>
                 <tr>
                     <td>Total des inscriptions des robots</td>
