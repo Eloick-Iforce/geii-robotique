@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('number_of_robots_but2')->nullable();
             $table->integer('number_of_robots_but3')->nullable();
             $table->integer('number_of_teachers')->nullable();
+            $table->boolean('is_open_pdf')->default(false);
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    protected $fillable = ['name', 'user_id', 'number_of_members', 'competition_id', 'number_of_robots_but1', 'number_of_robots_but2', 'number_of_robots_but3', 'number_of_teachers'];
+    protected $fillable = ['name', 'user_id', 'number_of_members', 'competition_id', 'number_of_robots_but1', 'number_of_robots_but2', 'number_of_robots_but3', 'number_of_teachers', 'is_open_pdf'];
 
     public function user()
     {
@@ -17,11 +17,6 @@ class Team extends Model
     public function competition()
     {
         return $this->belongsTo(Competition::class);
-    }
-
-    public function documents()
-    {
-        return $this->hasMany(Document::class);
     }
 
     public function results()
