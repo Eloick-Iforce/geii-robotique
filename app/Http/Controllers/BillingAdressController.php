@@ -5,15 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\BillingAddress;
 use Illuminate\Http\Request;
 
-/**
- * This class represents the controller for managing billing addresses.
- */
 class BillingAdressController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -22,56 +17,85 @@ class BillingAdressController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\View\View
      */
     public function create()
     {
+
         return view('billingadress.create');
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        // Code implementation...
+
+        $request->merge(['user_id' => auth()->user()->id]);
+
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'address' => 'required|string',
+            'state' => 'required|string',
+            'city' => 'required|string',
+            'country' => 'required|string',
+            'zip_code' => 'required|string',
+            'lastname' => 'required|string',
+            'etablisement' => 'required|string',
+            'user_id' => 'required|integer',
+        ]);
+
+
+
+        BillingAddress::create($request->all());
+
+        return redirect()->route('dashboard')
+            ->with('success', 'Billing Address created successfully.');
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\BillingAddress $billingAddress
-     * @return \Illuminate\Contracts\View\View
      */
     public function edit(BillingAddress $billingAddress)
     {
-        // Code implementation...
+
+        return view('billingadress.edit', ['billingadress' => $billingAddress]);
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\BillingAddress $billingAddress
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, BillingAddress $billingAddress)
     {
-        // Code implementation...
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'address' => 'required|string',
+            'state' => 'required|string',
+            'city' => 'required|string',
+            'country' => 'required|string',
+            'zip_code' => 'required|string',
+            'lastname' => 'required|string',
+            'etablisement' => 'required|string',
+            'user_id' => 'required|integer',
+        ]);
+
+        $billingAddress->update($request->all());
+
+        return redirect()->route('dashboard')
+            ->with('success', 'Votre adresse de facturation a bien été modifiée.');
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Request $request)
     {
-        // Code implementation...
+        $data = $request->all();
+        $billingAddress = BillingAddress::find($data['id_billing']);
+
+        $billingAddress->delete();
+
+        return redirect()->route('dashboard')
+            ->with('success', 'Adresse de facturation supprimée avec succès.');
     }
 }

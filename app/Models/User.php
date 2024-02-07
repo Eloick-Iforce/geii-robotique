@@ -8,23 +8,18 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
- * Class User
- *
- * @package App\Models
- *
  * @property int $id
  * @property string $name
  * @property string $email
+ * @property \Illuminate\Support\Carbon|null $email_verified_at
  * @property string $password
  * @property string $role
  * @property bool $is_verified
- * @property \Illuminate\Support\Carbon|null $email_verified_at
- * @property string $remember_token
+ * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  *
- * @property \App\Models\BillingAddress $billing_address
- * @property \App\Models\Team $team
+ * @method static \Database\Factories\UserFactory<self> factory($count = null, $state = [])
  */
 class User extends Authenticatable
 {

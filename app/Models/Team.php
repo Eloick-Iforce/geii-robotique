@@ -6,7 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * The Team model represents a team participating in a competition.
+ * @property int $id
+ * @property string $name
+ * @property int $user_id
+ * @property int $number_of_members
+ * @property int $competition_id
+ * @property int|null $number_of_robots_but1
+ * @property int|null $number_of_robots_but2
+ * @property int|null $number_of_robots_but3
+ * @property int|null $number_of_teachers
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  */
 class Team extends Model
 {

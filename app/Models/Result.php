@@ -6,24 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Result
- *
- * @package App\Models
- *
  * @property int $id
  * @property int $competition_id
  * @property int $team_id
  * @property string $result_data
- * @property string $media_url
- * @property \Illuminate\Support\Carbon $created_at
- * @property \Illuminate\Support\Carbon $updated_at
- *
- * @property Competition $competition
- * @property Team $team
+ * @property string|null $media_url
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  */
 class Result extends Model
 {
-    use HasFactory;
 
     protected $fillable = ['competition_id', 'team_id', 'result_data', 'media_url'];
 
