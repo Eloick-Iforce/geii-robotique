@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('challenges', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->unsignedBigInteger('competition_id');
+            $table->foreign('competition_id')->references('id')->on('competitions');
+            $table->text('description');
+            $table->integer('points');
             $table->timestamps();
         });
     }

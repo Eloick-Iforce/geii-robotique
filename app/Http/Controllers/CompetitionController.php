@@ -8,10 +8,15 @@ use App\Models\Team;
 use Illuminate\Http\Request;
 
 
+/**
+ * The CompetitionController class is responsible for handling HTTP requests related to competitions.
+ */
 class CompetitionController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -24,6 +29,8 @@ class CompetitionController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\View\View
      */
     public function create()
     {
@@ -33,6 +40,9 @@ class CompetitionController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\CompetitionRequest  $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(CompetitionRequest $request)
     {
@@ -41,12 +51,14 @@ class CompetitionController extends Controller
         $competition->fill($data);
         $competition->save();
 
-
         return redirect()->route('competitions.index');
     }
 
     /**
      * Display the specified resource.
+     *
+     * @param  \App\Models\Competition  $competition
+     * @return \Illuminate\Contracts\View\View
      */
     public function show(Competition $competition)
     {
@@ -55,6 +67,9 @@ class CompetitionController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Competition  $competition
+     * @return \Illuminate\Contracts\View\View
      */
     public function edit(Competition $competition)
     {
@@ -63,6 +78,10 @@ class CompetitionController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\CompetitionRequest  $request
+     * @param  \App\Models\Competition  $competition
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(CompetitionRequest $request, Competition $competition)
     {
@@ -75,6 +94,9 @@ class CompetitionController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Competition  $competition
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Competition $competition)
     {

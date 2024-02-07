@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Fichier de définition des routes web de l'application.
+ *
+ * Ce fichier contient les routes web qui sont chargées par le RouteServiceProvider
+ * et qui sont assignées au groupe de middleware "web". Faites quelque chose de génial !
+ *
+ * @package App\Http\Controllers
+ * @see https://laravel.com/docs/routing
+ */
+
 use App\Http\Controllers\BillingAdressController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\GenerateInvoiceController;
