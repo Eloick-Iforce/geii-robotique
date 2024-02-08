@@ -14,6 +14,7 @@ use App\Http\Controllers\BillingAdressController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\GenerateInvoiceController;
 use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\UserController;
 use App\Mail\Factures;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -56,6 +57,19 @@ Route::resources(
     ]
 );
 
+Route::resources(
+    [
+        'users' => UserController::class,
+    ]
+);
+
+Route::get('users/{user}/verify', [UserController::class, 'verify'])
+    ->name('users.verify');
+
+Route::get('users/{user}/unverify', [UserController::class, 'unverify'])
+    ->name('users.unverify');
+
+
 Route::get(('billingadress/destroy'), [BillingAdressController::class, 'destroy'])
     ->name('billingadress.destroy');
 
@@ -66,6 +80,7 @@ Route::get('invoices/{team}', [GenerateInvoiceController::class, 'show'])
 
 Route::get('invoices/{team}/mail', [GenerateInvoiceController::class, 'mail'])
     ->name('invoices.mail');
+
 
 
 

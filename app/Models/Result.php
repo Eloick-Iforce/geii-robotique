@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
 class Result extends Model
 {
 
-    protected $fillable = ['competition_id', 'team_id', 'result_data', 'media_url'];
+    protected $fillable = ['team_id', 'result_data', 'challenge_id'];
 
     /**
      * Get the competition that the result belongs to.
@@ -37,5 +37,15 @@ class Result extends Model
     public function team()
     {
         return $this->belongsTo(Team::class);
+    }
+
+    /**
+     * Get the challenge that the result belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function challenge()
+    {
+        return $this->belongsTo(Challenge::class);
     }
 }

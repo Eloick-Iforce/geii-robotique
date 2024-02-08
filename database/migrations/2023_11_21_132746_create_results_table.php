@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('competition_id');
             $table->unsignedBigInteger('team_id');
             $table->text('result_data');
-            $table->string('media_url')->nullable();
             $table->timestamps();
-
-            $table->foreign('competition_id')->references('id')->on('competitions');
+            $table->unsignedBigInteger('challenge_id');
+            $table->foreign('challenge_id')->references('id')->on('challenges');
             $table->foreign('team_id')->references('id')->on('teams');
         });
     }

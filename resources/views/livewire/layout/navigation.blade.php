@@ -33,15 +33,24 @@ new class extends Component
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @if(auth()->user()->is_verified==1)
                     <x-nav-link :href="route('competitions.index')" :active="request()->routeIs('competitions/*')" wire:navigate>
                         {{ __('Compétitions') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('teams.index')" :active="request()->routeIs('teams/*')" wire:navigate>
-                        {{ __('Équipes') }}
                     </x-nav-link>
                     <x-nav-link :href="route('forum.index')" :active="request()->routeIs('forum/*')" wire:navigate>
                         {{ __('Forum') }}
                     </x-nav-link>
+                    @endif
+                    @if(auth()->user()->billing_address)
+                    <x-nav-link :href="route('teams.index')" :active="request()->routeIs('teams/*')" wire:navigate>
+                        {{ __('Équipes') }}
+                    </x-nav-link>
+                    @endif
+                    @if(auth()->user()->role=='admin')
+                        <x-nav-link :href="route('users.index')" :active="request()->routeIs('users/*')" wire:navigate>
+                            {{ __('Utilisateurs') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 

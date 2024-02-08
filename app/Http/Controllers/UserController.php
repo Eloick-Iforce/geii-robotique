@@ -3,63 +3,74 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use Resend\Laravel\Facades\Resend;
 
+/**
+ * Class UserController
+ * 
+ * This class is responsible for handling user-related operations.
+ */
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
-        return view('users.index');
+        return view('users.index', [
+            'users' => User::all()
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
+     * Delete a user.
+     *
+     * @param User $user The user to be deleted.
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()->route('users.index');
+    }
+
+    /**
+     * Verify a user's account.
+     *
+     * @param User $user The user to be verified.
+     * @return \Illuminate\Http\RedirectResponse The redirect response after verifying the user's account and sending an email.
+     */
+    public function verify(User $user)
+    {
+        Resend::emails()->send([
+            'from' => 'GEII Rencontres Robotique <geii-robotique@resend.dev>',
+            'to' => [$user->email],
+            'subject' => 'Votre compte est maintenant vérifier',
+            'html' => 'Votre compte sur GEII Robotique est maintenant vérifier vous pouvez maintenant ajouté des équipes et une adresse de facturation'
+        ]);
+
+        $user->update([
+            'is_verified' => true
+        ]);
+
+        return redirect()->route('users.index');
+    }
+
+    /**
+     * Unverify a user's account.
+     *
+     * @param User $user The user to be unverified.
+     * @return \Illuminate\Http\RedirectResponse The redirect response after unverifying the user's account.
+     */
+    public function unverify(User $user)
+    {
+        $user->update([
+            'is_verified' => false
+        ]);
+
+        return redirect()->route('users.index');
     }
 }

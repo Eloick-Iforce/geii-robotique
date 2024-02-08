@@ -19,4 +19,20 @@ class Challenge extends Model
      * @var array
      */
     protected $fillable = ['name', 'competition_id', 'description', 'points'];
+
+    /**
+     * Get the competition that the challenge belongs to.
+     */
+    public function competition()
+    {
+        return $this->belongsTo(Competition::class);
+    }
+
+    /**
+     * Get the results associated with the challenge.
+     */
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
 }

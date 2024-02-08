@@ -223,7 +223,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Http\\Controllers\\UserController",
             "name": "UserController",
-            "summary": "",
+            "summary": "Class\u0020UserController",
             "url": "classes/App-Http-Controllers-UserController.html"
         },                {
             "fqsen": "\\App\\Http\\Controllers\\UserController\u003A\u003Aindex\u0028\u0029",
@@ -231,35 +231,20 @@ Search.appendIndex(
             "summary": "Display\u0020a\u0020listing\u0020of\u0020the\u0020resource.",
             "url": "classes/App-Http-Controllers-UserController.html#method_index"
         },                {
-            "fqsen": "\\App\\Http\\Controllers\\UserController\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "Show\u0020the\u0020form\u0020for\u0020creating\u0020a\u0020new\u0020resource.",
-            "url": "classes/App-Http-Controllers-UserController.html#method_create"
-        },                {
-            "fqsen": "\\App\\Http\\Controllers\\UserController\u003A\u003Astore\u0028\u0029",
-            "name": "store",
-            "summary": "Store\u0020a\u0020newly\u0020created\u0020resource\u0020in\u0020storage.",
-            "url": "classes/App-Http-Controllers-UserController.html#method_store"
-        },                {
-            "fqsen": "\\App\\Http\\Controllers\\UserController\u003A\u003Ashow\u0028\u0029",
-            "name": "show",
-            "summary": "Display\u0020the\u0020specified\u0020resource.",
-            "url": "classes/App-Http-Controllers-UserController.html#method_show"
-        },                {
-            "fqsen": "\\App\\Http\\Controllers\\UserController\u003A\u003Aedit\u0028\u0029",
-            "name": "edit",
-            "summary": "Show\u0020the\u0020form\u0020for\u0020editing\u0020the\u0020specified\u0020resource.",
-            "url": "classes/App-Http-Controllers-UserController.html#method_edit"
-        },                {
-            "fqsen": "\\App\\Http\\Controllers\\UserController\u003A\u003Aupdate\u0028\u0029",
-            "name": "update",
-            "summary": "Update\u0020the\u0020specified\u0020resource\u0020in\u0020storage.",
-            "url": "classes/App-Http-Controllers-UserController.html#method_update"
-        },                {
             "fqsen": "\\App\\Http\\Controllers\\UserController\u003A\u003Adestroy\u0028\u0029",
             "name": "destroy",
-            "summary": "Remove\u0020the\u0020specified\u0020resource\u0020from\u0020storage.",
+            "summary": "Delete\u0020a\u0020user.",
             "url": "classes/App-Http-Controllers-UserController.html#method_destroy"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\UserController\u003A\u003Averify\u0028\u0029",
+            "name": "verify",
+            "summary": "Verify\u0020a\u0020user\u0027s\u0020account.",
+            "url": "classes/App-Http-Controllers-UserController.html#method_verify"
+        },                {
+            "fqsen": "\\App\\Http\\Controllers\\UserController\u003A\u003Aunverify\u0028\u0029",
+            "name": "unverify",
+            "summary": "Unverify\u0020a\u0020user\u0027s\u0020account.",
+            "url": "classes/App-Http-Controllers-UserController.html#method_unverify"
         },                {
             "fqsen": "\\App\\Http\\Kernel",
             "name": "Kernel",
