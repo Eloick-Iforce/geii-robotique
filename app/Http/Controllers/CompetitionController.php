@@ -62,7 +62,11 @@ class CompetitionController extends Controller
      */
     public function show(Competition $competition)
     {
-        return view('competitions.show', compact('competition'));
+
+        $challenges = $competition->challenges;
+
+
+        return view('competitions.show', compact('competition', 'challenges'));
     }
 
     /**

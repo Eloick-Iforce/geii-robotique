@@ -11,6 +11,7 @@
  */
 
 use App\Http\Controllers\BillingAdressController;
+use App\Http\Controllers\ChallengesController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\GenerateInvoiceController;
 use App\Http\Controllers\TeamsController;
@@ -63,6 +64,13 @@ Route::resources(
     ]
 );
 
+Route::resources(
+    [
+        'challenges' => ChallengesController::class,
+    ]
+);
+
+
 Route::get('users/{user}/verify', [UserController::class, 'verify'])
     ->name('users.verify');
 
@@ -72,6 +80,7 @@ Route::get('users/{user}/unverify', [UserController::class, 'unverify'])
 
 Route::get(('billingadress/destroy'), [BillingAdressController::class, 'destroy'])
     ->name('billingadress.destroy');
+
 
 
 

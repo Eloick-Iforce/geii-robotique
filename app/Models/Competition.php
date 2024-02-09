@@ -23,9 +23,8 @@ class Competition extends Model
         return $this->hasMany(Team::class);
     }
 
-
-    public function results()
+    public function challenge()
     {
-        return $this->hasMany(Result::class);
+        return $this->hasMany(Challenge::class);
     }
 }
