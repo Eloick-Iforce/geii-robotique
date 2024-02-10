@@ -24,4 +24,4 @@ Install the npm dependencies
 
 Compile the assets
 
-        npm run dev
+    npm run dev
