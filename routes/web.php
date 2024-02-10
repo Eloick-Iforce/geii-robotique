@@ -81,6 +81,8 @@ Route::get('users/{user}/unverify', [UserController::class, 'unverify'])
 Route::get(('billingadress/destroy'), [BillingAdressController::class, 'destroy'])
     ->name('billingadress.destroy');
 
+Route::get('challenges/{competition}/create', [ChallengesController::class, 'create'])
+    ->name('challenges.create');
 
 
 

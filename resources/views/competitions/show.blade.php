@@ -22,7 +22,7 @@
                 @if (Auth::user()->role="admin")
                     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                         <div class="flex justify-end">
-                            <a href="{{ route('challenges.create', ['competition_id' => $competition->id]) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <a href="{{ route('challenges.create', $competition) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                 Créer un challenge
                             </a>
                         </div>
@@ -37,13 +37,15 @@
                     </div>
 
                         @foreach ($competition->challenges as $challenge)
-                            <div class="flex justify-between">
-                                <div class="text-xl">{{ $challenge->name }}</div>
+                            <div>
+                                <div class="text-xl font-bold">{{ $challenge->name }}</div>
                                 <div class="text-xl">{{ $challenge->description }}</div>
+                                <div class="text-sm text-gray-400">{{ $challenge->points }}</div>
                             </div>
                         @endforeach
-                    @endif
                 </div>
+
+                    @endif
 
                 
             </div>

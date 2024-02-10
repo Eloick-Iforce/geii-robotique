@@ -21,8 +21,8 @@
             </div>
     
             <div class="mb-4">
-                <label class="text-xl text-black dark:text-white" for="date">Type de points:</label>
-                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="date" name="date" id="date" required>
+                <label class="text-xl text-black dark:text-white" for="points">Type de points:</label>
+                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="text" name="points" id="points" required>
             </div>
     
             <button class="px-4 py-2 text-white font-light bg-green-500  tracking-wider  rounded" type="submit">Créer le challenge</button>

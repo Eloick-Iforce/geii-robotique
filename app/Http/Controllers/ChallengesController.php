@@ -13,10 +13,8 @@ class ChallengesController extends Controller
      */
     public function create(Competition $competition)
     {
-        dd($competition);
-
         return view('challenges.create', [
-            'competition' => $competition,
+            'competition_id' => $competition->id,
         ]);
     }
 
@@ -35,7 +33,7 @@ class ChallengesController extends Controller
 
         Challenge::create($request->all());
 
-        return redirect()->route('challenges.index')->with('message', 'Le challenge a bien été créé.');
+        return redirect()->route('competitions.show', $request->competition_id)->with('message', 'Le challenge a bien été créé.');
     }
 
 
