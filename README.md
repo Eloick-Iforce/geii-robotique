@@ -26,7 +26,7 @@ Compile the assets
 
     npm run dev
 
-TODO Before release
+## TODO Before release
 
 -   [ ] Add to Resend account domain name
 -   [ ] Activate account verification email when validate in UserContoller
