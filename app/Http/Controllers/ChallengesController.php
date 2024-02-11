@@ -40,9 +40,12 @@ class ChallengesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Challenge $challenge)
+    public function edit(Challenge $challenge, Competition $competition)
     {
-        return view('challenges.edit', compact('challenge'));
+        return view('challenges.edit', [
+            'challenge' => $challenge,
+            'competition_id' => $competition->id,
+        ]);
     }
 
     /**
@@ -50,7 +53,9 @@ class ChallengesController extends Controller
      */
     public function update(Request $request, Challenge $challenge)
     {
+
         $request->validate([
+            'challenge_id' => 'required',
             'name' => 'required',
             'description' => 'required',
             'points' => 'required',
@@ -59,7 +64,7 @@ class ChallengesController extends Controller
 
         $challenge->update($request->all());
 
-        return redirect()->route('challenges.index')->with('message', 'Le challenge a bien été modifié.');
+        return redirect()->route('competitions.show', $request->competition_id)->with('message', 'Le challenge a bien été modifié.');
     }
 
     /**

@@ -37,10 +37,27 @@
                     </div>
 
                         @foreach ($competition->challenges as $challenge)
-                            <div>
-                                <div class="text-xl font-bold">{{ $challenge->name }}</div>
-                                <div class="text-xl">{{ $challenge->description }}</div>
-                                <div class="text-sm text-gray-400">{{ $challenge->points }}</div>
+                            <div class="flex justify-between">
+                                <div>
+                                    <div class="text-xl font-bold">{{ $challenge->name }}</div>
+                                    <div class="text-lg">{{ $challenge->description }}</div>
+                                    <div class="text-sm text-gray-400">Résultats par {{ $challenge->points }}</div>
+                                </div>
+                            <div class="flex gap-8 items-center">
+                                @if (Auth::user()->role="admin")
+                                    <a href="{{ route('challenges.edit', $challenge) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                        Modifier
+                                    </a>
+                                    <form action="{{ route('challenges.destroy', $challenge) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                            Supprimer
+                                        </button>
+                                    </form>
+                                @endif
+                            </div>
+                                
                             </div>
                         @endforeach
                 </div>

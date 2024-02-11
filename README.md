@@ -30,3 +30,4 @@ Compile the assets
 
 -   [ ] Add to Resend account domain name
 -   [ ] Activate account verification email when validate in UserContoller
+-   [ ] Add Policies to the controllers

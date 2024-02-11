@@ -84,6 +84,10 @@ Route::get(('billingadress/destroy'), [BillingAdressController::class, 'destroy'
 Route::get('challenges/{competition}/create', [ChallengesController::class, 'create'])
     ->name('challenges.create');
 
+Route::get('challenges/{competition}/edit', [ChallengesController::class, 'edit'])
+    ->name('challenges.edit');
+
+
 
 
 Route::get('invoices/{team}', [GenerateInvoiceController::class, 'show'])

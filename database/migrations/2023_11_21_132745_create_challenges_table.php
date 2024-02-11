@@ -17,7 +17,10 @@ return new class extends Migration
             $table->unsignedBigInteger('competition_id');
             $table->foreign('competition_id')->references('id')->on('competitions');
             $table->text('description');
-            $table->text('points');
+            $table
+                ->enum('points', ['points', 'temps', 'mètres', 'autre'])
+                ->default('points')
+                ->index();
             $table->timestamps();
         });
     }
