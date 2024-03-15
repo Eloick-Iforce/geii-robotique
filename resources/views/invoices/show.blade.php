@@ -35,6 +35,10 @@
         div {
             margin-bottom: 20px;
         }
+
+        img {
+            margin-top: -100px
+        }
     </style>
 
 @php
@@ -59,6 +63,8 @@ $totalprof = $team->number_of_teachers * 45;
 
 $total = $totalprof + $totaletu + $total_cost;
 @endphp
+
+<img src="{{ asset("img/headerfacture.png")}}">
 
     <h2>
         Devis pour la rencontre de Robotique 2024 de Haguenau à la date du {{ now()->format('d/m/Y') }} pour la compétition {{ $team->competition->name }}

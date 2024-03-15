@@ -53,11 +53,11 @@
                                       <td class="border px-4 py-2 flex justify-center">
 
                                         <a href="{{ route('invoices.show', $team->id) }}" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">
-                                             Facture {{ $team->id}}
+                                             Facture
                                         </a>
 
                                         <a href="{{ route('invoices.mail', $team->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">
-                                             Envoyer la facture
+                                             Recevoir la facture par mail
                                         </a>
 
                                         @if (Auth::user()->role == 'admin')

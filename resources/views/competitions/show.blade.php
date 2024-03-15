@@ -19,7 +19,7 @@
                     <p class="text-xl">{{ $competition->description }}</p>
                 </div>
 
-                @if (Auth::user()->role="admin")
+                @if (Auth::user()->role == 'admin')
                     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                         <div class="flex justify-end">
                             <a href="{{ route('challenges.create', $competition) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -28,6 +28,7 @@
                         </div>
                     </div>
                 @endif
+
 
 
                 @if ($competition->challenges)
@@ -64,6 +65,42 @@
 
                     @endif
 
+                    <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
+                        <div class="text-2xl">
+                            Equipes inscrites ({{ $teams->count() }})
+                        </div>
+                        <table class="table-auto w-full mt-6">
+                            <thead>
+                                <tr>
+                                    <th class="px-4 py-2">Nom</th>
+                                    <th class="px-4 py-2">Nombre de membres</th>
+                                    <th class="px-4 py-2">Nombre d'enseignant</th>
+                                    <th class="px-4 py-2">Nombre de robot</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if ($teams)
+                                    @foreach ($teams as $team)
+                                        <tr>
+                                            <td class="border px-4 py-2">{{ $team->name }}</td>
+                                            <td class="border px-4 py-2">{{ $team->number_of_members }}</td>
+                                            <td class="border px-4 py-2">{{ $team->number_of_teachers }}</td>
+                                            <td class="border px-4 py-2">{{ $team->number_of_robots_but1 + $team->number_of_robots_but2 + $team->number_of_robots_but3 }}</td>
+                                </tr>
+                                    @endforeach
+                                    <tr>
+                                        <td class="border px-4 py-2 text-center" colspan="1">Total</td>
+                                        <td class="border px-4 py-2">{{ $teams->sum('number_of_members') }}</td>
+                                        <td class="border px-4 py-2">{{ $teams->sum('number_of_teachers') }}</td>
+                                        <td class="border px-4 py-2">{{ $teams->sum('number_of_robots_but1') + $teams->sum('number_of_robots_but2') + $teams->sum('number_of_robots_but3') }}</td>
+                                    </tr>                                    
+                                    @else
+                                    <tr>
+                                        <td class="border px-4 py-2 text-center" colspan="1">Aucune équipe inscrite</td>
+                                    </tr>
+                                @endif
+                            </tbody>
+                        </table>
                 
             </div>
         </div>
