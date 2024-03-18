@@ -57,7 +57,7 @@ class GenerateInvoiceController extends Controller
 
         // Send the invoice via email using the 'Resend' class
         Resend::emails($fileName)->send([
-            'from' => 'GEII Rencontres Robotique <geii-robotique@resend.dev>',
+            'from' => 'GEII Rencontres Robotique <geii-robotique@eloick.fr>',
             'to' => [auth()->user()->email],
             'subject' => 'Voici votre facture pour l\'équipe ' . $team->name,
             'attachments' => [
