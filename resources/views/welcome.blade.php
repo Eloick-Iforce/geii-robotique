@@ -79,7 +79,7 @@
         </div>
 
         <footer class="p-8 bg-gray-200 w-full">
-            <p class="text-center">© 2024 - Rencontres de Robotique GEII - Créer par <a href="https://eloick.fr" target="blank" class="underline text-red-500">Eloïck </a></p>
+            <p class="text-center">© 2024 - Rencontres de Robotique GEII - Créé par <a href="https://eloick.fr" target="blank" class="underline text-red-500">Eloïck </a></p>
         </footer>
     </body>
 </html>
