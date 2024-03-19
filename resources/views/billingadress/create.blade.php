@@ -16,6 +16,11 @@
                             <label class="text-xl text-black dark:text-white" for="title">Pays:</label>
                             <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="text" name="country" id="title" required>
                         </div>
+
+                        <div class="mb-4">
+                            <label class="text-xl text-black dark:text-white" for="description">Adresse:</label>
+                            <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="text" name="address" id="description" required>
+                        </div>
             
                         <div class="mb-4">
                             <label class="text-xl text-black dark:text-white" for="description">Ville:</label>
@@ -25,11 +30,6 @@
                         <div class="mb-4">
                             <label class="text-xl text-black dark:text-white" for="description">Code Postal:</label>
                             <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="text" name="zip_code" id="description" required>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="text-xl text-black dark:text-white" for="description">Adresse:</label>
-                            <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="text" name="address" id="description" required>
                         </div>
 
                         <div class="mb-4">

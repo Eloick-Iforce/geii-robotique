@@ -52,10 +52,8 @@ class GenerateInvoiceController extends Controller
         // Generate a unique filename for the invoice PDF
         $fileName = $team->name . '-' . now()->format('Y-m-d') . '.pdf';
 
-        // Save the invoice PDF to the 'invoices' directory
         $pdf->save(public_path('invoices/' . $fileName));
 
-        // Send the invoice via email using the 'Resend' class
         Resend::emails($fileName)->send([
             'from' => 'GEII Rencontres Robotique <geii-robotique@eloick.fr>',
             'to' => [auth()->user()->email],
@@ -65,7 +63,7 @@ class GenerateInvoiceController extends Controller
                     'content' => "Voici votre facture pour l'équipe " . $team->name . ".",
                     'filename' => $fileName,
                     'path' => asset('invoices/' . $fileName),
-                ]
+                ],
             ],
             'html' => view('invoices.mail')->render(),
         ]);

@@ -46,18 +46,42 @@ $robots_but1 = $team->number_of_robots_but1;
 $robots_but2 = $team->number_of_robots_but2;
 $robots_but3 = $team->number_of_robots_but3;
 
-$cost_but1 = ($robots_but1 > 0 ? 150 : 0) + 50 * ($robots_but1 - 1 > 0 ? $robots_but1 - 1 : 0);
-$cost_but2 = ($robots_but2 > 0 ? 150 : 0) + 50 * ($robots_but2 - 1 > 0 ? $robots_but2 - 1 : 0);
-$cost_but3 = ($robots_but3 > 0 ? 150 : 0) + 50 * ($robots_but3 - 1 > 0 ? $robots_but3 - 1 : 0);
+if ($robots_but1 > 0) {
+    $cost_but1 = 150;
+    
+    $additional_but1_cost = ($robots_but1 - 1) * 50;
+} else {
+    $cost_but1 = 0;
+    $additional_but1_cost = 0;
+}
 
-$total_cost = $cost_but1 + $cost_but2 + $cost_but3;
+if ($robots_but2 > 0 && $cost_but1 == 0) {
+    $cost_but2 = 150;
+    
+    $additional_but2_cost = ($robots_but2 - 1) * 50;
+} else {
+    $cost_but2 = $robots_but2 * 50;
+    $additional_but2_cost = 0;
+}
+
+if ($robots_but3 > 0 && $cost_but1 == 0 && $cost_but2 == 0) {
+    $cost_but3 = 150;
+    
+    $additional_but3_cost = ($robots_but3 - 1) * 50;
+} else {
+    $cost_but3 = $robots_but3 * 50;
+    $additional_but3_cost = 0;
+}
+
+$total_cost = $cost_but1 + $additional_but1_cost + $cost_but2 + $additional_but2_cost + $cost_but3 + $additional_but3_cost;
+
 
 $totaletu = 0;
-        if ($team->number_of_members <= 6) {
-            $totaletu = $team->number_of_members * 80;
-        } else {
-            $totaletu = (6 * 80) + (($team->number_of_members - 6) * 40);
-        }
+if ($team->number_of_members <= 6) {
+    $totaletu = $team->number_of_members * 80;
+} else {
+    $totaletu = (6 * 80) + (($team->number_of_members - 6) * 40);
+}
 
 $totalprof = $team->number_of_teachers * 45;
 
@@ -67,7 +91,8 @@ $total = $totalprof + $totaletu + $total_cost;
 <img src="{{ asset("img/headerfacture.png")}}">
 
     <h2>
-        Devis pour la rencontre de Robotique 2024 de Haguenau à la date du {{ now()->format('d/m/Y') }} pour la compétition {{ $team->competition->name }}
+        <h2>Devis pour la rencontre de {{ $team->competition->name }}</h2>
+        <h2>Établi à la date du {{ now()->format('d/m/Y') }}</h2>
     </h2>
     <div>
         <div>

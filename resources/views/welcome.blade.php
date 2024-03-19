@@ -34,17 +34,17 @@
                     <li class="mb-10 ms-4">
                         <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Inscription sur le site</h3>
-                        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Création du compte utilisateur puis attente de sa validation.</p>
+                        <p class="mb-4 text-base font-normal text-justify text-gray-500 dark:text-gray-400">Création du compte utilisateur puis attente de sa validation.</p>
                     </li>
                     <li class="mb-10 ms-4">
                         <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Confirmation d'inscription sur le site</h3>
-                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Une fois la validation reçue dans votre boîte mail, vous pouvez à nouveau vous connecter sur le site et voir les différentes compétitions de cette année ainsi que les challenges. Vous pouvez aussi accéder à la partie forum pour pouvoir poser des questions ou bien communiquer sur les différentes compétitions.</p>
+                        <p class="text-base font-normal text-gray-500 text-justify dark:text-gray-400">Une fois la validation reçue dans votre boîte mail, vous pouvez à nouveau vous connecter sur le site et voir les différentes compétitions de cette année ainsi que les challenges. Vous pouvez aussi accéder à la partie forum pour pouvoir poser des questions ou bien communiquer sur les différentes compétitions.</p>
                     </li>
                     <li class="ms-4">
                         <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Envie de s'inscrire ?</h3>
-                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Une fois que vous avez choisi la compétition où vous voulez vous inscrire, rien de plus simple : vous devez tout d'abord rentrer votre adresse de facturation, puis ensuite vous rendre dans la nouvelle partie disponible, à savoir "Équipes". Dans cette partie, vous allez pouvoir directement créer et gérer vos équipes afin de pouvoir les inscrire à une compétition. Une fois votre équipe créée et inscrite au tournoi, il ne vous reste plus qu'à vérifier si le devis généré est bien le bon, puis à appuyer sur le bouton "recevoir par mail" pour l'obtenir dans votre boîte mail, et l'envoyer aux organisateurs de la compétition.</p>
+                        <p class="text-base font-normal text-gray-500 text-justify dark:text-gray-400">Une fois que vous avez choisi la compétition où vous voulez vous inscrire, rien de plus simple : vous devez tout d'abord rentrer votre adresse de facturation, puis ensuite vous rendre dans la nouvelle partie disponible, à savoir "Équipes". Dans cette partie, vous allez pouvoir directement créer et gérer vos équipes afin de pouvoir les inscrire à une compétition. Une fois votre équipe créée et inscrite au tournoi, il ne vous reste plus qu'à vérifier si le devis généré est bien le bon, puis à appuyer sur le bouton "recevoir par mail" pour l'obtenir dans votre boîte mail, il sera envoyer automatiquement aux organisateurs.</p>
                     </li>
                 </ol>
 

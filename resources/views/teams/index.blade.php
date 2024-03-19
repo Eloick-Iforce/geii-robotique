@@ -60,15 +60,13 @@
                                              Recevoir la facture par mail
                                         </a>
 
-                                        @if (Auth::user()->role == 'admin')
                                              <form action="{{ route('teams.destroy', $team->id) }}" method="POST" class="inline-block">
                                                   @csrf
                                                   @method('DELETE')
                                                   <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                                    Supprimer
+                                                      Supprimer
                                                   </button>
-                                             </form>
-                                        @endcan
+                                              </form>
                                       </td>
                                  </tr>
                                  @endforeach

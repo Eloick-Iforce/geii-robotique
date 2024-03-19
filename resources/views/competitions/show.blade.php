@@ -45,7 +45,7 @@
                                     <div class="text-sm text-gray-400">Résultats par {{ $challenge->points }}</div>
                                 </div>
                             <div class="flex gap-8 items-center">
-                                @if (Auth::user()->role="admin")
+                                @if (Auth::user()->role == 'admin')
                                     <a href="{{ route('challenges.edit', $challenge) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                         Modifier
                                     </a>

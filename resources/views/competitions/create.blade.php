@@ -20,7 +20,7 @@
             </div>
     
             <div class="mb-4">
-                <label class="text-xl text-black dark:text-white" for="date">Date de fin:</label>
+                <label class="text-xl text-black dark:text-white" for="date">Date</label>
                 <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="date" name="date" id="date" required>
             </div>
     

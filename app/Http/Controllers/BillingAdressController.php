@@ -67,6 +67,7 @@ class BillingAdressController extends Controller
      */
     public function update(Request $request, BillingAddress $billingAddress)
     {
+
         $request->validate([
             'name' => 'required|string|max:255',
             'address' => 'required|string',
@@ -76,8 +77,11 @@ class BillingAdressController extends Controller
             'zip_code' => 'required|string',
             'lastname' => 'required|string',
             'etablisement' => 'required|string',
-            'user_id' => 'required|integer',
+            'id' => 'required|integer',
         ]);
+
+        $billingAddress = BillingAddress::find($request->id);
+
 
         $billingAddress->update($request->all());
 

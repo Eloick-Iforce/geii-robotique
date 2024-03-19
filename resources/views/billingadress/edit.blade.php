@@ -18,6 +18,12 @@
                             <label class="text-xl text-black dark:text-white" for="title">Pays:</label>
                             <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="text" name="country" id="title" value="{{ $billingadress->country }}" required>
                         </div>
+
+
+                        <div class="mb-4">
+                            <label class="text-xl text-black dark:text-white" for="description">Adresse:</label>
+                            <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="text" name="address" id="description" value="{{ $billingadress->address }}" required>
+                        </div>
             
                         <div class="mb-4">
                             <label class="text-xl text-black dark:text-white" for="description">Ville:</label>
@@ -29,10 +35,6 @@
                             <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="text" name="zip_code" id="description" value="{{ $billingadress->zip_code }}" required>
                         </div>
 
-                        <div class="mb-4">
-                            <label class="text-xl text-black dark:text-white" for="description">Adresse:</label>
-                            <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="text" name="address" id="description" value="{{ $billingadress->address }}" required>
-                        </div>
 
                         <div class="mb-4">
                             <label class="text-xl text-black dark:text-white" for="description">Région:</label>
