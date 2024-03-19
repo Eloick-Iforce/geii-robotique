@@ -54,18 +54,13 @@ class GenerateInvoiceController extends Controller
 
         $pdf->save(public_path('invoices/' . $fileName));
 
-        Resend::emails($fileName)->send([
+        $url_fichier = asset('invoices/' . $fileName);
+
+        Resend::emails($url_fichier)->send([
             'from' => 'GEII Rencontres Robotique <geii-robotique@eloick.fr>',
             'to' => [auth()->user()->email],
             'subject' => 'Voici votre facture pour l\'équipe ' . $team->name,
-            'attachments' => [
-                [
-                    'content' => "Voici votre facture pour l'équipe " . $team->name . ".",
-                    'filename' => $fileName,
-                    'path' => asset('invoices/' . $fileName),
-                ],
-            ],
-            'html' => view('invoices.mail')->render(),
+            'html' => view('invoices.mail', ['url' => $url_fichier])->render(),
         ]);
 
         // Redirect the user to the teams index page with a success message
