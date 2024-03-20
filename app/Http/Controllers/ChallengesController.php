@@ -74,6 +74,6 @@ class ChallengesController extends Controller
     {
         $challenge->delete();
 
-        return redirect()->route('challenges.index')->with('message', 'Le challenge a bien été supprimé.');
+        return redirect()->route('competitions.index');
     }
 }
