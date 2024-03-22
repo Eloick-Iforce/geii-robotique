@@ -32,7 +32,9 @@ use TeamTeaTime\Forum\Support\Web\Forum;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')
+    ->name('welcome');
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -95,11 +97,6 @@ Route::get('invoices/{team}', [GenerateInvoiceController::class, 'show'])
 
 Route::get('invoices/{team}/mail', [GenerateInvoiceController::class, 'mail'])
     ->name('invoices.mail');
-
-
-
-
-
 
 Route::view('profile', 'profile')
     ->middleware(['auth'])
