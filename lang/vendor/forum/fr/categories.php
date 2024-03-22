@@ -6,7 +6,7 @@ return [
     'actions' => 'Actions de catégorie',
     'category' => 'Catégorie|Catégories',
     'confirm_nonempty_delete' => "Oui, je veux supprimer définitivement cette catégorie et tout ce qu'elle contient",
-    'create' => 'Créer catégorie',
+    'create' => 'Créer une catégorie',
     'created' => 'Catégorie créée|Catégories créées',
     'deleted' => 'Catégorie supprimée|Catégories supprimées',
     'disable_threads' => 'Désactiver les sujets',
