@@ -75,7 +75,10 @@
                                     <th class="px-4 py-2">Nom</th>
                                     <th class="px-4 py-2">Nombre de membres</th>
                                     <th class="px-4 py-2">Nombre d'enseignant</th>
-                                    <th class="px-4 py-2">Nombre de robot</th>
+                                    <th class="px-4 py-2">Nombre de robot BUT1</th>
+                                    <th class="px-4 py-2">Nombre de robot BUT2</th>
+                                    <th class="px-4 py-2">Nombre de robot BUT3</th>
+                                    <th class="px-4 py-2">Nombre total de robot</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -85,6 +88,9 @@
                                             <td class="border px-4 py-2">{{ $team->name }}</td>
                                             <td class="border px-4 py-2">{{ $team->number_of_members }}</td>
                                             <td class="border px-4 py-2">{{ $team->number_of_teachers }}</td>
+                                            <td class="border px-4 py-2">{{ $team->number_of_robots_but1 }}</td>
+                                            <td class="border px-4 py-2">{{ $team->number_of_robots_but2 }}</td>
+                                            <td class="border px-4 py-2">{{ $team->number_of_robots_but3 }}</td>
                                             <td class="border px-4 py-2">{{ $team->number_of_robots_but1 + $team->number_of_robots_but2 + $team->number_of_robots_but3 }}</td>
                                 </tr>
                                     @endforeach
@@ -92,6 +98,9 @@
                                         <td class="border px-4 py-2 text-center" colspan="1">Total</td>
                                         <td class="border px-4 py-2">{{ $teams->sum('number_of_members') }}</td>
                                         <td class="border px-4 py-2">{{ $teams->sum('number_of_teachers') }}</td>
+                                        <td class="border px-4 py-2">{{ $teams->sum('number_of_robots_but1') }}</td>
+                                        <td class="border px-4 py-2">{{ $teams->sum('number_of_robots_but2') }}</td>
+                                        <td class="border px-4 py-2">{{ $teams->sum('number_of_robots_but3') }}</td>
                                         <td class="border px-4 py-2">{{ $teams->sum('number_of_robots_but1') + $teams->sum('number_of_robots_but2') + $teams->sum('number_of_robots_but3') }}</td>
                                     </tr>                                    
                                     @else

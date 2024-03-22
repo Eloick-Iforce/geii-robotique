@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-black dark:text-white leading-tight">
-            {{ __('Competitions') }}
+            {{ __('Équipes') }}
         </h2>
     </x-slot>
     <form action="{{ route('teams.store') }}" method="POST" class="p-6 max-w-sm mx-auto  rounded-xl shadow-md flex items-center space-x-4">
@@ -22,28 +22,28 @@
 
             <div class="mb-4">
                 <label class="text-xl text-black dark:text-white" for="title">Nombre de robot BUT1:</label>
-                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_robots_but1" id="title" required min="0" max="10">
+                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_robots_but1" id="title" required min="0">
             </div>
 
             <div class="mb-4">
                 <label class="text-xl text-black dark:text-white" for="title">Nombre de robot BUT2:</label>
-                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_robots_but2" id="title" required min="0" max="10">
+                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_robots_but2" id="title" required min="0">
             </div>
 
             <div class="mb-4">
                 <label class="text-xl text-black dark:text-white" for="title">Nombre de robot BUT3:</label>
-                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_robots_but3" id="title" required min="0" max="10">
+                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_robots_but3" id="title" required min="0">
             </div>
 
             <div class="mb-4">
                 <label class="text-xl text-black dark:text-white" for="title">Nombre de membre de l'équipe (80€ par étudiant en dessous de 6, 40 € par étudiant
                     supplémentaire):</label>
-                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_members" id="title" required min="1" max="10">
+                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_members" id="title" required min="1">
             </div>
 
             <div class="mb-4">
                 <label class="text-xl text-black dark:text-white" for="title">Nombre d'enseignant (45€ par enseignant):</label>
-                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_teachers" id="title" required min="1" max="3">
+                <input class="border-2 border-gray-600 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 w-full" type="number" name="number_of_teachers" id="title" required min="1">
             </div>
 
             <div class="mb-4">

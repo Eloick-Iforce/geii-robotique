@@ -2,22 +2,22 @@
 
 return [
 
-    'access_controlled_by_private_ancestor' => 'The ancestor category :category is set as private and controls access to this category.',
-    'actions' => 'Catégorie actions',
+    'access_controlled_by_private_ancestor' => "La catégorie ancêtre :category est définie comme privée et contrôle l'accès à cette catégorie.",
+    'actions' => 'Actions de catégorie',
     'category' => 'Catégorie|Catégories',
-    'confirm_nonempty_delete' => 'Yes, I want to permanently delete this category and everything inside it',
+    'confirm_nonempty_delete' => "Oui, je veux supprimer définitivement cette catégorie et tout ce qu'elle contient",
     'create' => 'Créer catégorie',
-    'created' => 'Catégorie créé|Catégories créé',
-    'deleted' => 'Catégorie supprimé|Catégories supprimés',
-    'disable_threads' => 'Désactiver sujets',
-    'enable_threads' => 'Activer sujets',
+    'created' => 'Catégorie créée|Catégories créées',
+    'deleted' => 'Catégorie supprimée|Catégories supprimées',
+    'disable_threads' => 'Désactiver les sujets',
+    'enable_threads' => 'Activer les sujets',
     'make_private' => 'Rendre privée',
     'make_public' => 'Rendre publique',
-    'mark_read' => 'Marquer les sujets dans cette catégorie comme lu',
+    'mark_read' => 'Marquer les sujets de cette catégorie comme lus',
     'marked_read' => 'Les nouveaux sujets dans :category ont été marqués comme lus',
-    'restored' => 'Catégorie restauré|Catégories restaurés',
+    'restored' => 'Catégorie restaurée|Catégories restaurées',
     'subcategories' => 'Les sous-catégories',
-    'threads_disabled' => 'La création de sujets a été désactivé dans cette catégorie',
-    'updated' => 'Catégorie mis à jour|Catégories mis à jour',
+    'threads_disabled' => 'La création de sujets a été désactivée dans cette catégorie',
+    'updated' => 'Catégorie mise à jour|Catégories mises à jour',
 
 ];

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Teams') }}
+            {{ __('Équipes') }}
         </h2>
     </x-slot>
 
@@ -53,11 +53,11 @@
                                       <td class="border px-4 py-2 flex justify-center">
 
                                         <a href="{{ route('invoices.show', $team->id) }}" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">
-                                             Facture
+                                             Récapitulatif
                                         </a>
 
                                         <a href="{{ route('invoices.mail', $team->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">
-                                             Recevoir la facture par mail
+                                             Recevoir le devis par mail
                                         </a>
 
                                              <form action="{{ route('teams.destroy', $team->id) }}" method="POST" class="inline-block">
