@@ -56,19 +56,19 @@
                 <div class="grow justify-between navbar-collapse" :class="{ 'flex flex-col': !isCollapsed, 'hidden md:flex': isCollapsed }">
                     <ul class="flex flex-col md:flex-row gap-10 mb-4 md:mb-0">
                         <li>
-                            <a class="text-gray-500" href="{{ url(config('forum.web.router.prefix')) }}">{{ trans('forum::general.index') }}</a>
+                            <a class="text-gray-500 hover:text-blue-600" href="{{ url(config('forum.web.router.prefix')) }}">{{ trans('forum::general.index') }}</a>
                         </li>
                         <li>
-                            <a class="text-gray-500" href="{{ route('forum.recent') }}">{{ trans('forum::threads.recent') }}</a>
+                            <a class="text-gray-500 hover:text-blue-600" href="{{ route('forum.recent') }}">{{ trans('forum::threads.recent') }}</a>
                         </li>
                         @auth
                             <li>
-                                <a class="text-gray-500" href="{{ route('forum.unread') }}">{{ trans('forum::threads.unread_updated') }}</a>
+                                <a class="text-gray-500 hover:text-blue-600" href="{{ route('forum.unread') }}">{{ trans('forum::threads.unread_updated') }}</a>
                             </li>
                         @endauth
                         @can ('moveCategories')
                             <li>
-                                <a class="text-gray-500" href="{{ route('forum.category.manage') }}">{{ trans('forum::general.manage') }}</a>
+                                <a class="text-gray-500 hover:text-blue-600" href="{{ route('forum.category.manage') }}">{{ trans('forum::general.manage') }}</a>
                             </li>
                         @endcan
                     </ul>
