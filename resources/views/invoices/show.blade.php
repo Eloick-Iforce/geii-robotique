@@ -115,17 +115,17 @@ $total = $totalprof + $totaletu + $total_cost;
                 <tr>
                     <td>Robots BUT 1</td>
                     <td>{{ $team->number_of_robots_but1 }}</td>
-                    <td>{{ $cost_but1 }} €</td>
+                    <td>{{ $cost_but1 + $additional_but1_cost  }} €</td>
                 </tr>
                 <tr>
                     <td>Robots BUT 2</td>
                     <td>{{ $team->number_of_robots_but2 }}</td>
-                    <td>{{ $cost_but2 }} €</td>
+                    <td>{{ $cost_but2 + $additional_but3_cost }} €</td>
                 </tr>
                 <tr>
                     <td>Robots BUT 3</td>
                     <td>{{ $team->number_of_robots_but3 }}</td>
-                    <td>{{ $cost_but3 }} €</td>
+                    <td>{{ $cost_but3 + $additional_but3_cost }} €</td>
                 </tr>
                 <tr>
                     <td>Total des inscriptions des robots</td>
