@@ -98,6 +98,9 @@ Route::get('invoices/{team}', [GenerateInvoiceController::class, 'show'])
 Route::get('invoices/{team}/mail', [GenerateInvoiceController::class, 'mail'])
     ->name('invoices.mail');
 
+Route::get('invoices/recap/{team}', [GenerateInvoiceController::class, 'recap'])
+    ->name('invoices.recap');
+
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');

@@ -64,7 +64,7 @@ class CompetitionController extends Controller
     {
 
         $challenges = $competition->challenges;
-        $teams = $competition->team;
+        $teams = $competition->team->where('is_open_pdf', 1);
         return view('competitions.show', [
             'competition' => $competition,
             'challenges' => $challenges,

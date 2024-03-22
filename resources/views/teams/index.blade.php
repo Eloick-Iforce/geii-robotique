@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                    <h2 class="text-2xl font-bold">Bienvenue {{ Auth::user()->name }}</h2>
@@ -35,6 +35,7 @@
                                       <th class="px-4 py-2">Nombre de membres</th>
                                       <th class="px-4 py-2">Nombre d'enseignant</th>
                                           <th class="px-4 py-2">Compétition</th>
+                                             <th class="px-4 py-2">Inscription</th>
                                       <th class="px-4 py-2">Actions</th>
                                  </tr>
                             </thead>
@@ -50,9 +51,21 @@
                                           <td class="border px-4 py-2">{{ $team->number_of_members }}</td>
                                              <td class="border px-4 py-2">{{ $team->number_of_teachers }}</td>
                                              <td class="border px-4 py-2">{{ $team->competition->name }}</td>
+                                             <td class="border px-4 py-2 text-center">
+                                                  @if ($team->is_open_pdf == 1)
+                                                       <span class="inline-block bg-green-500 text-white font-bold py-1 px-2 rounded">
+                                                            Inscription validée
+                                                       </span>
+                                                  @else
+                                                       <span class="inline-block bg-red-500 text-white font-bold py-1 px-2 rounded">
+                                                            Pas inscrit
+                                                       </span>
+                                                  @endif
+                                             </td>
+
                                       <td class="border px-4 py-2 flex justify-center">
 
-                                        <a href="{{ route('invoices.show', $team->id) }}" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">
+                                        <a href="{{ route('invoices.recap', $team->id) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mr-4 rounded">
                                              Récapitulatif
                                         </a>
 

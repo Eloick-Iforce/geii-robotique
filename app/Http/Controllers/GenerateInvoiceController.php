@@ -63,8 +63,21 @@ class GenerateInvoiceController extends Controller
             'html' => view('invoices.mail', ['url' => $url_fichier])->render(),
         ]);
 
+        $team->is_open_pdf = 1;
+        $team->save();
+
         // Redirect the user to the teams index page with a success message
         return redirect()->route('teams.index')->with('message', "L'envoi de la facture pour l'équipe $team->name a bien été effectué.");
+    }
+
+
+    public function recap(Team $team)
+    {
+        $billingAddress = auth()->user()->billing_address;
+
+        $competitions = $team->competitions;
+
+        return view('invoices.recap', ['team' => $team, 'billingAddress' => $billingAddress, 'competitions' => $competitions]);
     }
 
     /**
