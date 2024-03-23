@@ -6,62 +6,64 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class=" mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     @if (Auth::user()->is_verified)
                         <h2 class="text-2xl font-bold">Bienvenue {{ Auth::user()->name }}</h2>
                         @if (Auth::user()->billing_address)
-                            <h2 class="text-2xl font-bold mt-4">Votre adresse de facturation</h2>
-                            <div class="grid grid-cols-2 gap-4 mb-8">
-                                <div class="border p-4 rounded">
-                                    <h2 class="text-2xl font-bold mb-2">Pays</h2>
-                                    <p>{{ Auth::user()->billing_address->country }}</p>
-                                </div>
-                                <div class="border p-4 rounded">
-                                    <h2 class="text-2xl font-bold mb-2">Ville</h2>
-                                    <p>{{ Auth::user()->billing_address->city }}</p>
-                                </div>
-                                <div class="border p-4 rounded">
-                                    <h2 class="text-2xl font-bold mb-2">Code Postal</h2>
-                                    <p>{{ Auth::user()->billing_address->zip_code }}</p>
-                                </div>
-                                <div class="border p-4 rounded">
-                                    <h2 class="text-2xl font-bold mb-2">Adresse</h2>
-                                    <p>{{ Auth::user()->billing_address->address }}</p>
-                                </div>
-                                <div class="border p-4 rounded">
-                                    <h2 class="text-2xl font-bold mb-2">Région</h2>
-                                    <p>{{ Auth::user()->billing_address->state }}</p>
-                                </div>
-                                <div class="border p-4 rounded">
-                                    <h2 class="text-2xl font-bold mb-2">Etablissement</h2>
-                                    <p>{{ Auth::user()->billing_address->etablisement }}</p>
-                                </div>
-                                <div class="border p-4 rounded">
-                                    <h2 class="text-2xl font-bold mb-2">Nom</h2>
-                                    <p>{{ Auth::user()->billing_address->lastname }}</p>
-                                </div>
-                                <div class="border p-4 rounded ">
-                                    <h2 class="text-2xl font-bold mb-2">Prenom</h2>
-                                    <p>{{ Auth::user()->billing_address->name }}</p>
+
+                        <div class="mt-6">
+                            <div class="bg-white dark:bg-gray-800 overflow-hidden h-1/2 w-1/3 border shadow-sm sm:rounded-lg">
+                                <div class="p-6 text-gray-900 dark:text-gray-100">
+                                    <div class="flex justify-between items-center">
+                                    <h2 class="text-xl font-bold">Votre adresse de facturation :</h2>
+                                    <div class="flex gap-4 items-center">
+                                    <a href="{{ route('billingadress.edit', Auth::user()->billing_address) }}" class="btn-edit">
+                                        Modifier
+                                    </a>
+                                    <form action="{{ route('billingadress.destroy') }}" method="POST" >
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="hidden" name="id_billing" value="{{Auth::user()->billing_address->id}}">
+                                        <button type="submit" class="btn-delete">
+                                            Supprimer
+                                        </button>
+                                    </form>
+                                    </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="border-b border-gray-300 pb-2">
+                                            <span class="font-bold">Pays:</span> {{ Auth::user()->billing_address->country }}
+                                        </div>
+                                        <div class="border-b border-gray-300 pb-2">
+                                            <span class="font-bold">Ville:</span> {{ Auth::user()->billing_address->city }}
+                                        </div>
+                                        <div class="border-b border-gray-300 pb-2">
+                                            <span class="font-bold">Code Postal:</span> {{ Auth::user()->billing_address->zip_code }}
+                                        </div>
+                                        <div class="border-b border-gray-300 pb-2">
+                                            <span class="font-bold">Adresse:</span> {{ Auth::user()->billing_address->address }}
+                                        </div>
+                                        <div class="border-b border-gray-300 pb-2">
+                                            <span class="font-bold">Région:</span> {{ Auth::user()->billing_address->state }}
+                                        </div>
+                                        <div class="border-b border-gray-300 pb-2">
+                                            <span class="font-bold">Etablissement:</span> {{ Auth::user()->billing_address->etablisement }}
+                                        </div>
+                                        <div class="border-b border-gray-300 pb-2">
+                                            <span class="font-bold">Nom:</span> {{ Auth::user()->billing_address->lastname }}
+                                        </div>
+                                        <div class="pb-2">
+                                            <span class="font-bold">Prenom:</span> {{ Auth::user()->billing_address->name }}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <a href="{{ route('billingadress.edit', Auth::user()->billing_address) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Modifier mon adresse de facturation
-                            </a>
-                            <form action="{{ route('billingadress.destroy') }}" method="POST" class="mt-4">
-                                @csrf
-                                @method('DELETE')
-                                <input type="hidden" name="id_billing" value="{{Auth::user()->billing_address->id}}">
-                                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                    Supprimer mon adresse de facturation
-                                </button>
-                            </form>
+                        </div>
                         @else
                             <p class="text-xl mb-8">Vous n'avez pas d'adresse de facturation associée, merci d'en rajouter une</p>
-                            <a href="{{ route('billingadress.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <a href="{{ route('billingadress.create') }}" class="btn-add">
                                 Ajouter une adresse de facturation
                             </a>
                         @endif

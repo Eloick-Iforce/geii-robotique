@@ -72,7 +72,7 @@ $total = $totalprof + $totaletu + $total_cost;
         <h2 class="text-xl font-bold mb-8">Total : {{ $total }} €</h2>
 
 
-        <a href="{{ route('invoices.mail', $team->id) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mr-4 rounded">
+        <a href="{{ route('invoices.mail', $team->id) }}" class="btn-edit">
             Valider mon inscription et recevoir le devis par mail
         </a>
 

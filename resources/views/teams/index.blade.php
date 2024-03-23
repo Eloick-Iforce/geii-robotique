@@ -13,7 +13,7 @@
 
                      <div class="mt-6">
                           @if (Auth::user())
-                          <a href="{{ route('teams.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                          <a href="{{ route('teams.create') }}" class="btn-add">
                             Ajouter une équipe
                           </a>
                           @endif
@@ -53,11 +53,11 @@
                                              <td class="border px-4 py-2">{{ $team->competition->name }}</td>
                                              <td class="border px-4 py-2 text-center">
                                                   @if ($team->is_open_pdf == 1)
-                                                       <span class="inline-block bg-green-500 text-white font-bold py-1 px-2 rounded">
+                                                       <span class="inline-block bg-green-500 text-white text-sm font-bold py-2 px-4 rounded-full">
                                                             Inscription validée
                                                        </span>
                                                   @else
-                                                       <span class="inline-block bg-red-500 text-white font-bold py-1 px-2 rounded">
+                                                       <span class="inline-block bg-red-500 text-white text-sm font-bold py-2 px-4 rounded-full">
                                                             Pas inscrit
                                                        </span>
                                                   @endif
@@ -65,18 +65,18 @@
 
                                       <td class="border px-4 py-2 flex justify-center">
 
-                                        <a href="{{ route('invoices.recap', $team->id) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mr-4 rounded">
+                                        <a href="{{ route('invoices.recap', $team->id) }}" class="btn-view">
                                              Récapitulatif
                                         </a>
 
-                                        <a href="{{ route('invoices.mail', $team->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4 rounded">
+                                        <a href="{{ route('invoices.mail', $team->id) }}" class="btn-edit">
                                              Recevoir le devis par mail
                                         </a>
 
                                              <form action="{{ route('teams.destroy', $team->id) }}" method="POST" class="inline-block">
                                                   @csrf
                                                   @method('DELETE')
-                                                  <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                                  <button type="submit" class="btn-delete">
                                                       Supprimer
                                                   </button>
                                               </form>

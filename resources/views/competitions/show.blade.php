@@ -11,7 +11,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <a href="{{ route('competitions.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <a href="{{ route('competitions.index') }}" class="btn-edit">
                         Retour
                     </a>
                     <h2 class="text-2xl font-bold mt-8">{{ $competition->name }}</h2>
@@ -22,7 +22,7 @@
                 @if (Auth::user()->role == 'admin')
                     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                         <div class="flex justify-end">
-                            <a href="{{ route('challenges.create', $competition) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <a href="{{ route('challenges.create', $competition) }}" class="btn-add">
                                 Créer un challenge
                             </a>
                         </div>
@@ -31,7 +31,7 @@
 
 
 
-                @if ($competition->challenges)
+                @if ($competition->challenges && count($competition->challenges) > 0)
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                     <div class="text-2xl">
                         Challenges
@@ -46,13 +46,13 @@
                                 </div>
                             <div class="flex gap-8 items-center">
                                 @if (Auth::user()->role == 'admin')
-                                    <a href="{{ route('challenges.edit', $challenge) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    <a href="{{ route('challenges.edit', $challenge) }}" class="btn-edit">
                                         Modifier
                                     </a>
                                     <form action="{{ route('challenges.destroy', $challenge) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                        <button type="submit" class="btn-delete">
                                             Supprimer
                                         </button>
                                     </form>
