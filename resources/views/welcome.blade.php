@@ -13,7 +13,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="bg-[#f3f4f6] selection:bg-[#E63462] selection:text-white">
+    <body class="bg-[#f3f4f6]">
         <div class="  mx-auto w-[90%] ">
             @if (Route::has('login'))
                 <livewire:welcome.navigation />
