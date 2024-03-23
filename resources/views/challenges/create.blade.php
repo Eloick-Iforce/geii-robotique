@@ -1,9 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-black dark:text-white leading-tight">
-            {{ __('Competitions') }}
-        </h2>
-    </x-slot>
+
     <form action="{{ route('challenges.store') }}" method="POST" class="max-w-xl p-6 mx-auto  rounded-xl shadow-md flex items-center space-x-4">
         @csrf
         @method('POST')
@@ -31,7 +27,7 @@
                 </select>
             </div>
 
-            <button class="btn-add mt-4" type="submit">Créer le challenge</button>
+            <button class="btn btn-success text-white mt-4" type="submit">Créer le challenge</button>
         </div>
     </form>
 </x-app-layout>

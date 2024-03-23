@@ -1,10 +1,5 @@
 <x-app-layout>
 
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Récapitulatif Inscription') }}
-        </h2>
-    </x-slot>
 
     @php
 
@@ -72,7 +67,7 @@ $total = $totalprof + $totaletu + $total_cost;
         <h2 class="text-xl font-bold mb-8">Total : {{ $total }} €</h2>
 
 
-        <a href="{{ route('invoices.mail', $team->id) }}" class="btn-edit">
+        <a href="{{ route('invoices.mail', $team->id) }}" class="btn btn-success text-white">
             Valider mon inscription et recevoir le devis par mail
         </a>
 

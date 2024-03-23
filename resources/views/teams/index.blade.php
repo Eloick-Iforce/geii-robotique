@@ -1,9 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Équipes') }}
-        </h2>
-    </x-slot>
+
 
     <div class="py-12">
         <div class="mx-auto sm:px-6 lg:px-8">
@@ -13,7 +9,7 @@
 
                      <div class="mt-6">
                           @if (Auth::user())
-                          <a href="{{ route('teams.create') }}" class="btn-add">
+                          <a href="{{ route('teams.create') }}" class="btn btn-primary">
                             Ajouter une équipe
                           </a>
                           @endif
@@ -53,30 +49,30 @@
                                              <td class="border px-4 py-2">{{ $team->competition->name }}</td>
                                              <td class="border px-4 py-2 text-center">
                                                   @if ($team->is_open_pdf == 1)
-                                                       <span class="inline-block bg-green-500 text-white text-sm font-bold py-2 px-4 rounded-full">
+                                                       <span class="badge badge-success text-white">
                                                             Inscription validée
                                                        </span>
                                                   @else
-                                                       <span class="inline-block bg-red-500 text-white text-sm font-bold py-2 px-4 rounded-full">
+                                                       <span class="badge badge-error text-white">
                                                             Pas inscrit
                                                        </span>
                                                   @endif
                                              </td>
 
-                                      <td class="border px-4 py-2 flex justify-center">
+                                      <td class="border px-4 py-2 flex gap-4 justify-center">
 
-                                        <a href="{{ route('invoices.recap', $team->id) }}" class="btn-view">
+                                        <a href="{{ route('invoices.recap', $team->id) }}" class="btn btn-success text-white">
                                              Récapitulatif
                                         </a>
 
-                                        <a href="{{ route('invoices.mail', $team->id) }}" class="btn-edit">
+                                        <a href="{{ route('invoices.mail', $team->id) }}" class="btn btn-info text-white">
                                              Recevoir le devis par mail
                                         </a>
 
                                              <form action="{{ route('teams.destroy', $team->id) }}" method="POST" class="inline-block">
                                                   @csrf
                                                   @method('DELETE')
-                                                  <button type="submit" class="btn-delete">
+                                                  <button type="submit" class="btn btn-error text-white">
                                                       Supprimer
                                                   </button>
                                               </form>

@@ -1,9 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-black dark:text-white leading-tight">
-            {{ __('Équipes') }}
-        </h2>
-    </x-slot>
+
     <form action="{{ route('teams.store') }}" method="POST" class="max-w-xl p-6 mx-auto  rounded-xl shadow-md flex items-center space-x-4">
         @csrf
         @method('POST')
@@ -53,7 +49,7 @@
                     @endforeach
                 </select>
     
-            <button class="btn-add mt-4" type="submit">Inscrire cette équipe à cette compétition</button>
+            <button class="btn btn-success text-white mt-4" type="submit">Inscrire cette équipe à cette compétition</button>
         </div>
     </form>
 </x-app-layout>

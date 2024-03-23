@@ -43,8 +43,7 @@
 
 <body class="bg-gray-100">
 
-    <x-slot name="header">
-        <nav class="v-navbar h-full py-4">
+        <nav class="navbar bg-base-300 border-t border-gray-400 ">
             <div class="container mx-auto px-4 md:flex md:items-center md:gap-4">
                 <div class="flex justify-between items-center">
                     <button class="navbar-toggler block md:hidden border rounded-md px-2 py-1" type="button" :class="{ collapsed: isCollapsed }" @click="isCollapsed = ! isCollapsed">
@@ -75,7 +74,6 @@
                 </div>
             </div>
         </nav>
-    </x-slot>
 
 
     <div id="main" class="container mx-auto p-4">

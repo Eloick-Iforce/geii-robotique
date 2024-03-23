@@ -1,9 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Gestion des utilisateurs') }}
-        </h2>
-    </x-slot>
+
 
     <div class="py-12">
         <div class="mx-auto sm:px-6 lg:px-8">
@@ -40,7 +36,7 @@
                                                     @method('GET')
                                                     <button
                                                         type="submit"
-                                                        class="btn-view"
+                                                        class="btn btn-info text-white"
                                                     >
                                                         Vérifier
                                                     </button>
@@ -51,7 +47,7 @@
                                                     @method('GET')
                                                     <button
                                                         type="submit"
-                                                        class="btn-edit"
+                                                        class="btn btn-warning text-white"
                                                     >
                                                         Déverifier
                                                     </button>
@@ -62,7 +58,7 @@
                                                 @method('DELETE')
                                                 <button
                                                     type="submit"
-                                                    class="btn-delete"
+                                                    class="btn btn-error text-white"
                                                     onclick="return confirm('Are you sure?')"
                                                 >
                                                     Supprimer

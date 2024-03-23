@@ -1,9 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-black dark:text-white leading-tight">
-            {{ __('Adresse de facturation') }}
-        </h2>
-    </x-slot>
+
 
     <div class="py-12">
             <form action="{{ route('billingadress.update', $billingadress->id) }}" method="POST" class="max-w-xl p-6 mx-auto  rounded-xl shadow-md flex items-center space-x-4">
@@ -53,7 +49,7 @@
                         <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="name" id="description" value="{{ $billingadress->name }}" required>
                     </div>
 
-                    <button class="btn-add mt-4" type="submit">Valider mon addresse</button>
+                    <button class="btn btn-success text-white mt-4" type="submit">Valider mon addresse</button>
                 </div>
             </form>
         </div>

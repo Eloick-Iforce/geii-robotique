@@ -1,9 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Mon Espace') }}
-        </h2>
-    </x-slot>
+
 
     <div class="py-12">
         <div class=" mx-auto sm:px-6 lg:px-8">
@@ -19,14 +15,14 @@
                                     <div class="flex justify-between items-center">
                                     <h2 class="text-xl font-bold">Votre adresse de facturation :</h2>
                                     <div class="flex gap-4 items-center">
-                                    <a href="{{ route('billingadress.edit', Auth::user()->billing_address) }}" class="btn-edit">
+                                    <a href="{{ route('billingadress.edit', Auth::user()->billing_address) }}" class="btn btn-primary">
                                         Modifier
                                     </a>
                                     <form action="{{ route('billingadress.destroy') }}" method="POST" >
                                         @csrf
                                         @method('DELETE')
                                         <input type="hidden" name="id_billing" value="{{Auth::user()->billing_address->id}}">
-                                        <button type="submit" class="btn-delete">
+                                        <button type="submit" class="btn btn-error btn-outline">
                                             Supprimer
                                         </button>
                                     </form>
