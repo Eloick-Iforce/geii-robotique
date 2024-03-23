@@ -50,7 +50,13 @@ $total = $totalprof + $totaletu + $total_cost;
 
     @endphp
 
-    <div class="p-4 bg-white m-8 rounded-lg shadow-sm">
+    <div class="p-4 bg-white m-8 rounded-lg shadow-sm flex gap-16">
+        <a href="{{ route('teams.index') }}" class="btn btn-primary text-white">
+            Retour
+        </a>
+
+        <div>
+
 
         <h2 class="text-4xl font-bold mb-8">Récapitulatif du devis de l'équipe {{ $team->name}}</h2>
 
@@ -70,6 +76,8 @@ $total = $totalprof + $totaletu + $total_cost;
         <a href="{{ route('invoices.mail', $team->id) }}" class="btn btn-success text-white">
             Valider mon inscription et recevoir le devis par mail
         </a>
+
+        </div>
 
     </div>
 

@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <form action="{{ route('competitions.store') }}" method="POST" class="max-w-xl p-6 mx-auto  rounded-xl shadow-md flex items-center space-x-4">
+    <form action="{{ route('competitions.store') }}" method="POST" class="max-w-xl p-6 mx-auto  rounded-xl shadow-md flex items-center  space-x-4 my-8">
         @csrf
         @method('POST')
     
@@ -23,4 +23,5 @@
             <button class="btn btn-success text-white mt-4" type="submit">Créer la compétition</button>
         </div>
     </form>
+    </div>
 </x-app-layout>

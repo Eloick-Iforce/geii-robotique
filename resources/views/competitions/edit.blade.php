@@ -1,6 +1,5 @@
 <x-app-layout>
-
-    <form action="{{ route('competitions.update', $competition) }}" method="POST" class="max-w-xl p-6 mx-auto  rounded-xl shadow-md flex items-center space-x-4">
+    <form action="{{ route('competitions.update', $competition) }}" method="POST" class="max-w-xl p-6 mx-auto  rounded-xl shadow-md flex items-center space-x-4 my-8">
         @csrf
         @method('PUT')
 
@@ -26,4 +25,5 @@
             <button class="btn btn-success text-white mt-4" type="submit">Modifier la compétition</button>
             </div>
     </form>
+    </div>
 </x-app-layout>

@@ -10,24 +10,25 @@
                     <a href="{{ route('competitions.index') }}" class="btn btn-primary">
                         Retour
                     </a>
+                    <div class="flex flex-col items-end justify-end gap-4">
                     <div class="text-right">
                     <h2 class="text-2xl font-bold">{{ $competition->name }}</h2>
                     <p class="text-xl">{{ \Carbon\Carbon::parse($competition->date)->isoFormat('dddd D MMMM YYYY') }}</p>
                     <p class="text-xl">{{ $competition->description }}</p>
                     </div>
-                </div>
-
-                @if (Auth::user()->role == 'admin')
-                    <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
+                    @if (Auth::user()->role == 'admin')
                         <div class="flex justify-end">
-                            <a href="{{ route('challenges.create', $competition) }}" class="btn-add">
+                            <a href="{{ route('challenges.create', $competition) }}" class="btn btn-primary">
                                 Créer un challenge
                             </a>
                         </div>
-                    </div>
                 @endif
+                    </div>
 
 
+
+                    </div>
+                </div>
 
                 @if ($competition->challenges && count($competition->challenges) > 0)
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
@@ -42,15 +43,15 @@
                                     <div class="text-lg">{{ $challenge->description }}</div>
                                     <div class="text-sm text-gray-400">Résultats par {{ $challenge->points }}</div>
                                 </div>
-                            <div class="flex gap-8 items-center">
+                            <div class="flex gap-4 items-center">
                                 @if (Auth::user()->role == 'admin')
-                                    <a href="{{ route('challenges.edit', $challenge) }}" class="btn-edit">
+                                    <a href="{{ route('challenges.edit', $challenge) }}" class="btn btn-warning text-white">
                                         Modifier
                                     </a>
                                     <form action="{{ route('challenges.destroy', $challenge) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn-delete">
+                                        <button type="submit" class="btn btn-error text-white">
                                             Supprimer
                                         </button>
                                     </form>
