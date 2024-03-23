@@ -70,6 +70,9 @@
                                         <a href="{{ route('competitions.index') }}" class="btn btn-primary btn-outline">
                                             Voir les compétitions
                                         </a>
+                                        <a href="{{ route('forum.unread') }}" class="btn btn-primary btn-outline">
+                                            Voir les messages non lus du forum
+                                        </a>
                                         @if (Auth::user()->role == 'admin')
                                         <a href="{{ route('competitions.create') }}" class="btn btn-primary btn-outline">
                                             Ajouter une compétition
