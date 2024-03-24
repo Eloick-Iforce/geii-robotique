@@ -2,7 +2,7 @@
 
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 dark:text-gray-100">
+        <div class=" mx-auto sm:px-6 lg:px-8 dark:text-gray-100">
 
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
@@ -63,6 +63,40 @@
                 </div>
 
                     @endif
+<div class="bg-white border-b border-gray-200 flex flex-col gap-4 pt-4">
+                    <h2 class="text-2xl ml-4 font-bold">Statistiques :</h2>
+                    <div class="stats stats-vertical lg:stats-horizontal rounded-none w-full shadow">
+  
+                        <div class="stat">
+                          <div class="stat-title">Nombre d'équipe</div>
+                          <div class="stat-value">{{ $teams->count() }}</div>
+                          <div class="stat-desc">Inscrite à cette compétition</div>
+                        </div>
+                        
+                        <div class="stat">
+                          <div class="stat-title">Nombre de Robot en BUT1</div>
+                          <div class="stat-value">{{ $teams->sum('number_of_robots_but1') }}</div>
+                        </div>
+                        
+                        <div class="stat">
+                          <div class="stat-title">Nombre de Robot en BUT2</div>
+                          <div class="stat-value">{{ $teams->sum('number_of_robots_but2') }}</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-title">Nombre de Robot en BUT3</div>
+                            <div class="stat-value">{{ $teams->sum('number_of_robots_but3') }}</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-title">Nombre d'étudiants</div>
+                            <div class="stat-value">{{ $teams->sum('number_of_members') }}</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-title">Nombre de professeurs</div>
+                            <div class="stat-value">{{ $teams->sum('number_of_teachers') }}</div>
+                          </div>
+                        
+                      </div>
+</div>
 
                     <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                         <div class="text-2xl">
