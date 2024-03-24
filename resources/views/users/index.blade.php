@@ -27,17 +27,17 @@
                                         <span x-show="user.is_verified == 0" class="inline-block bg-red-500 text-white text-sm font-bold py-2 px-4 rounded-full">Non vérifié</span>
                                     </div>
                                     <div class="flex justify-center gap-4">
-                                        <form x-show="user.is_verified == 0" :action="'/users/verify/' + user.id" method="POST" class="inline">
+                                        <form x-show="user.is_verified == 0" :action="'/users/' + user.id + '/verify'" method="POST" class="inline">
                                             @csrf
                                             @method('GET')
                                             <button type="submit" class="btn btn-info text-white">Vérifier</button>
                                         </form>
-                                        <form x-show="user.is_verified == 1" :action="'/users/unverify/' + user.id" method="POST" class="inline">
+                                        <form x-show="user.is_verified == 1" :action="'/users/'+ user.id + '/unverify'" method="POST" class="inline">
                                             @csrf
                                             @method('GET')
                                             <button type="submit" class="btn btn-warning text-white">Déverifier</button>
                                         </form>
-                                        <form :action="'/users/destroy/' + user.id" method="POST" class="inline">
+                                        <form :action="'/users/' + user.id + 'destroy/'" method="POST" class="inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-error text-white" onclick="return confirm('Are you sure?')">Supprimer</button>
