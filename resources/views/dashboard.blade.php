@@ -1,17 +1,16 @@
 <x-app-layout>
 
-
     <div class="py-12">
         <div class=" mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     @if (Auth::user()->is_verified)
-                        <h2 class="text-2xl font-bold">Bienvenue {{ Auth::user()->name }}</h2>
+                        <h2 class="text-2xl font-bold" id="welcome">Bienvenue {{ Auth::user()->name }} sur votre espace</h2>
                         @if (Auth::user()->billing_address)
 
                         <div class="mt-6 flex flex-wrap justify-center 2xl:flex-nowrap gap-4">
                             <div class="flex flex-col 2xl:w-1/3 w-full gap-4">
-                            <div class="bg-white dark:bg-gray-800 overflow-hidden h-1/2 border shadow-sm sm:rounded-lg">
+                            <div class="bg-white dark:bg-gray-800 overflow-hidden h-1/2 border shadow-sm sm:rounded-lg" id="billing-address">
                                 <div class="p-6 text-gray-900 dark:text-gray-100">
                                     <div class="flex justify-between items-center">
                                     <h2 class="text-xl font-bold">Votre adresse de facturation :</h2>
@@ -57,7 +56,7 @@
                                     </div>
                                 </div>
                             </div>
-                                <div class="bg-white dark:bg-gray-800 overflow-hidden h-1/2 border shadow-sm sm:rounded-lg">
+                                <div class="bg-white dark:bg-gray-800 overflow-hidden h-1/2 border shadow-sm sm:rounded-lg" id="quick-actions">
                                     <div class="p-6 text-gray-900 dark:text-gray-100">
                                         <h2 class="text-xl font-bold mb-8">Actions Rapide :</h2>
                                         <div class="flex flex-col w-full gap-4">
@@ -83,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
+                            <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg" id="image-container">
                                 <img src="https://placehold.co/1200x800" alt="Image 1" class="w-full h-full object-cover">
                             </div>
                         </div>
@@ -101,4 +100,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+        gsap.from("#billing-address", { opacity: 0, duration: 1, x: -250 });
+        gsap.from("#quick-actions", { opacity: 0, duration: 1, y: 250 });
+        gsap.from("#image-container", { opacity: 0, duration: 1, x: 250 });
+    </script>
 </x-app-layout>

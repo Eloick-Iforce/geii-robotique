@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
+      <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,16 +12,19 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="bg-[#f3f4f6]">
-        <div class="  mx-auto w-[90%] ">
-            @if (Route::has('login'))
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+        
+        
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+                     @if (Route::has('login'))
                 <livewire:welcome.navigation />
             @endif
 
             <header class="min-h-screen flex justify-between items-center">
                 <img src="{{ asset("img/robot.png")}}" class="h-[30%] w-[30%]">
-                <div>
+                <div class="w-2/3">
                 <h1 class=" text-8xl font-bold">Rencontres de Robotique GEII</h1>
                 <p class=" text-2xl">Bienvenue sur le site des rencontres de robotique GEII</p>
                 </div>
@@ -96,19 +99,21 @@
                     <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
                         <img src="https://placehold.co/600x400" alt="Image 6" class="w-full h-full object-cover">
                     </div>
-
-
-                
+                </div>
 
             </main>
+    
 
-
-
-
-        </div>
 
         <footer class="p-8 bg-gray-200 w-full">
             <p class="text-center">© 2024 - Rencontres de Robotique GEII - Créé par <a href="https://eloick.fr" target="blank" class="underline text-red-500">Eloïck </a></p>
         </footer>
+
+        <script>
+            gsap.from("header", { duration: 1, opacity: 0, y: -50 });
+            gsap.from(".timeline li", { duration: 1, opacity: 0, y: -50, stagger: 0.2 });
+            gsap.from(".grid div", { duration: 1, opacity: 0, y: -50, stagger: 0.2 });
+            gsap.from("footer", { duration: 1, opacity: 0, y: 50 });
+        </script>
     </body>
 </html>

@@ -6,7 +6,7 @@ use Livewire\Volt\Component;
 new class extends Component
 {
     /**
-     * Log the current user out of the application.
+     * Déconnecte l'utilisateur actuel de l'application.
      */
     public function logout(Logout $logout): void
     {
@@ -17,12 +17,12 @@ new class extends Component
 }; ?>
 
 <nav x-data="{ open: false }" class="navbar bg-base-300">
-    <!-- Primary Navigation Menu -->
+    <!-- Menu de navigation principal -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
 
-                <!-- Navigation Links -->
+                <!-- Liens de navigation -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')" wire:navigate>
                         {{ __('Accueil') }}
@@ -51,7 +51,7 @@ new class extends Component
                 </div>
             </div>
 
-            <!-- Settings Dropdown -->
+            <!-- Menu des paramètres -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -68,20 +68,20 @@ new class extends Component
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile')" wire:navigate>
-                            {{ __('Profile') }}
+                            {{ __('Profil') }}
                         </x-dropdown-link>
 
-                        <!-- Authentication -->
+                        <!-- Authentification -->
                         <button wire:click="logout" class="w-full text-start">
                             <x-dropdown-link>
-                                {{ __('Log Out') }}
+                                {{ __('Déconnexion') }}
                             </x-dropdown-link>
                         </button>
                     </x-slot>
                 </x-dropdown>
             </div>
 
-            <!-- Hamburger -->
+            <!-- Menu hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -93,14 +93,14 @@ new class extends Component
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
+    <!-- Menu de navigation responsive -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')" wire:navigate>
                 {{ __('Accueil') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                {{ __('Dashboard') }}
+                {{ __('Tableau de bord') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('competitions.index')" :active="request()->routeIs('competitions/*')" wire:navigate>
                 {{ __('Compétitions') }}
@@ -118,7 +118,7 @@ new class extends Component
             @endif
         </div>
 
-        <!-- Responsive Settings Options -->
+        <!-- Options de paramètres responsive -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800 dark:text-gray-200" x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
@@ -127,13 +127,13 @@ new class extends Component
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile')" wire:navigate>
-                    {{ __('Profile') }}
+                    {{ __('Profil') }}
                 </x-responsive-nav-link>
 
-                <!-- Authentication -->
+                <!-- Authentification -->
                 <button wire:click="logout" class="w-full text-start">
                     <x-responsive-nav-link>
-                        {{ __('Log Out') }}
+                        {{ __('Se déconnecter') }}
                     </x-responsive-nav-link>
                 </button>
             </div>
