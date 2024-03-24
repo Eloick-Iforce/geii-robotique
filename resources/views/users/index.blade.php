@@ -5,11 +5,8 @@
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
                     <div x-data="{ search: '', users: JSON.parse('{{ json_encode($users) }}'), sortField: '', sortDirection: 'asc' }">
                         <div class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 items-center border-b border-gray-200 py-2">
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 items-center border-b border-gray-200 py-2">
                                 <input x-model="search" type="text" placeholder="Rechercher par nom" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none">
-                                <div>
-                                    <button class="btn btn-neutral" @click="sortField = 'name'; sortDirection = sortDirection === 'asc' ? 'desc' : 'asc'">Trier par nom</button>
-                                </div>
                                 <div>
                                     <button class="btn btn-neutral" @click="sortField = 'is_verified'; sortDirection = sortDirection === 'asc' ? 'desc' : 'asc'">Trier par statut vérifié</button>
                                 </div>
