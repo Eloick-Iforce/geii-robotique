@@ -37,9 +37,9 @@
                                             @method('GET')
                                             <button type="submit" class="btn btn-warning text-white">Déverifier</button>
                                         </form>
-                                        <form :action="'/users/' + user.id + '/delete'" method="POST" class="inline">
+                                        <form :action="'/users/' + user.id + '/destroy'" method="POST" class="inline">
                                             @csrf
-                                            @method('DELETE')
+                                            @method('GET')
                                             <button type="submit" class="btn btn-error text-white" onclick="return confirm('Vous êtes sur ?')">Supprimer</button>
                                         </form>
                                     </div>
