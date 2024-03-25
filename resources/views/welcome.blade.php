@@ -14,7 +14,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-
+    </head>
         
         
           <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,16 +30,17 @@
                 <div class="text-green-400">
                   <p class="text-2xl">GeSi</p>
                   <p class="text-2xl">Association des départements GEII des IUT de France</p>
+                  <a href="#main" class="btn btn-primary mt-4">Les étapes -></a>
                 </div>
               </div>
             </header>
 
 
 
-            <main class="flex flex-col items-center justify-center mb-16">
+            <main  class="flex flex-col items-center justify-center mb-16">
 
 
-                <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical w-1/2 text-justify">
+                <ul id="main" class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical w-1/2 text-justify">
                     <li>
                       <div class="timeline-middle">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
