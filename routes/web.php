@@ -16,7 +16,9 @@ use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\GenerateInvoiceController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\YouTubeController;
 use App\Mail\Factures;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use TeamTeaTime\Forum\Support\Web\Forum;
@@ -32,7 +34,51 @@ use TeamTeaTime\Forum\Support\Web\Forum;
 |
 */
 
-Route::view('/', 'welcome')
+
+function checkLiveStatus()
+{
+    $apiKey = env('YOUTUBE_API_KEY');
+
+    $channelId = "UCXuqSBlHAE6Xw-yeJA0Tunw";
+
+    $liveStatusResponse = Http::get("https://www.googleapis.com/youtube/v3/search", [
+        'key' => $apiKey,
+        'channelId' => $channelId,
+        'eventType' => 'live',
+        'type' => 'video'
+    ]);
+
+    $liveStatusData = $liveStatusResponse->json();
+
+    if (isset($liveStatusData['items']) && count($liveStatusData['items']) > 0) {
+        $liveVideoId = $liveStatusData['items'][0]['id']['videoId'];
+        return "https://www.youtube.com/watch?v=$liveVideoId";
+    } else {
+        $latestVideoResponse = Http::get("https://www.googleapis.com/youtube/v3/search", [
+            'key' => $apiKey,
+            'channelId' => $channelId,
+            'order' => 'date',
+            'type' => 'video'
+        ]);
+
+        $latestVideoData = $latestVideoResponse->json();
+
+        if (isset($latestVideoData['items']) && count($latestVideoData['items']) > 0) {
+            $latestVideoId = $latestVideoData['items'][0]['id']['videoId'];
+            return "https://www.youtube.com/watch?v=$latestVideoId";
+        }
+    }
+
+
+
+    return 'Aucune vidéo trouvée';
+
+    return 'Aucune chaîne correspondante trouvée';
+}
+
+$liveStatus = checkLiveStatus();
+
+Route::view('/', 'welcome', ['liveStatus' => $liveStatus])
     ->name('welcome');
 
 

@@ -22,6 +22,7 @@
                 <livewire:welcome.navigation />
             @endif
 
+
             <header class="min-h-screen flex justify-between items-center">
                 <img src="{{ asset("img/robot.png")}}" class="h-[30%] w-[30%]">
                 <div class="w-2/3">
@@ -101,7 +102,16 @@
                     </div>
                 </div>
 
+
+                <div class="mt-8">
+                  <p class="mb-8 font-bold text-2xl">Regardez la compétition en direct :</p>
+                <iframe width="560" height="315" src="{{ $liveStatus }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+
             </main>
+
+
     
 
 
