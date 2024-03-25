@@ -26,7 +26,7 @@
                               @if($teams->isEmpty())
                               <div class="border p-4 h-[60vh] w-full flex justify-center items-center rounded-xl">
                                    <div class="flex flex-col items-center justify-center gap-4">
-                                  <p class="font-bold text-4xl"> Vous avez aucune équipe</p>
+                                  <p class="font-bold text-4xl"> Vous n'avez aucune équipe</p>
                                   <p class="text-lg">Cliquez sur le bouton ci-dessous pour ajouter une équipe</p>
                                   <a href="{{ route('teams.create') }}" class="btn btn-primary">
                                       Ajouter une équipe

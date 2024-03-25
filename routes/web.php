@@ -39,7 +39,7 @@ function checkLiveStatus()
 {
     $apiKey = env('YOUTUBE_API_KEY');
 
-    $channelId = "UCXuqSBlHAE6Xw-yeJA0Tunw";
+    $channelId = "UCwxcXL4gn7oxhJI6JfMy61A";
 
     $liveStatusResponse = Http::get("https://www.googleapis.com/youtube/v3/search", [
         'key' => $apiKey,
@@ -54,31 +54,13 @@ function checkLiveStatus()
         $liveVideoId = $liveStatusData['items'][0]['id']['videoId'];
         return "https://www.youtube.com/embed/$liveVideoId";
     } else {
-        $latestVideoResponse = Http::get("https://www.googleapis.com/youtube/v3/search", [
-            'key' => $apiKey,
-            'channelId' => $channelId,
-            'order' => 'date',
-            'type' => 'video'
-        ]);
-
-        $latestVideoData = $latestVideoResponse->json();
-
-        if (isset($latestVideoData['items']) && count($latestVideoData['items']) > 0) {
-            $latestVideoId = $latestVideoData['items'][0]['id']['videoId'];
-            return "https://www.youtube.com/embed/$latestVideoId";
-        }
+        return "https://www.youtube.com/embed/jtr9OzcYE6E";
     }
 
-
-
-    return 'Aucune vidéo trouvée';
-
     return 'Aucune chaîne correspondante trouvée';
-}
+};
 
-$liveStatus = checkLiveStatus();
-
-Route::view('/', 'welcome', ['liveStatus' => $liveStatus])
+Route::view('/', 'welcome', ['liveStatus' => $liveStatus = checkLiveStatus()])
     ->name('welcome');
 
 
