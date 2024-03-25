@@ -37,11 +37,10 @@
                                             @method('GET')
                                             <button type="submit" class="btn btn-warning text-white">Déverifier</button>
                                         </form>
-                                        <form :action="'/users/' + user.id + '/destroy'" method="POST" class="inline">
+                                        <form :action="'/users/'+user.id+'/delete'" method="POST" class="inline">
                                             @csrf
-                                            @method('DELETE')
-                                            <input type="hidden" name="id" x-model="user.id">
-                                            <button type="submit" class="btn btn-error text-white" onclick="return confirm('Vous êtes sur ?')">Supprimer</button>
+                                            @method('POST')
+                                            <button type="submit" class="btn btn-error text-white">Supprimer</button>
                                         </form>
                                     </div>
                                 </div>

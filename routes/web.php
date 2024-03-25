@@ -100,7 +100,6 @@ Route::resources(
     ]
 );
 
-
 Route::get('users/{user}/verify', [UserController::class, 'verify'])
     ->name('users.verify');
 
@@ -117,7 +116,8 @@ Route::get('challenges/{competition}/create', [ChallengesController::class, 'cre
 Route::get('challenges/{competition}/edit', [ChallengesController::class, 'edit'])
     ->name('challenges.edit');
 
-
+Route::post('users/{user}/delete', [UserController::class, 'delete'])
+    ->name('users.delete');
 
 
 Route::get('invoices/{team}', [GenerateInvoiceController::class, 'show'])
