@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                             <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg" id="image-container">
-                                <img src="https://placehold.co/1200x800" alt="Image 1" class="w-full h-full object-cover">
+                                <img src={{ asset("img/csm_IMG_0428_c8b0bb3be1.jpg")}} width="1200" height="800" alt="Image 1" class="w-full h-full object-cover">
                             </div>
                         </div>
                         @else
