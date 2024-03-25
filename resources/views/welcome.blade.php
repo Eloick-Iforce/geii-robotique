@@ -23,7 +23,7 @@
             @endif
 
 
-            <header class="w-full min-h-screen flex flex-col md:flex-row justify-center items-center gap-32">
+            <header id="header" class="w-full min-h-screen flex flex-col md:flex-row justify-center items-center gap-32">
               <img src="{{ asset("img/geii.png")}}" class="w-64 lg:w-auto">
               <div class="w-96">
                 <h1 class="text-6xl font-bold">Rencontres de Robotique</h1>
@@ -33,6 +33,7 @@
                 </div>
               </div>
             </header>
+
 
 
             <main class="flex flex-col items-center justify-center mb-16">
@@ -125,9 +126,9 @@
         </footer>
 
         <script>
-            gsap.from("header", { duration: 1, opacity: 0, y: -50 });
-            gsap.from(".timeline li", { duration: 1, opacity: 0, y: -50, stagger: 0.2 });
-            gsap.from(".grid div", { duration: 1, opacity: 0, y: -50, stagger: 0.2 });
+            gsap.from("header", { opacity: 0, duration: 1, y: -100 });
+            gsap.from(".timeline li", { duration: 1, opacity: 0, y: 50, stagger: 0.2 });
+            gsap.from(".grid div", { duration: 1, opacity: 0, x: -50, stagger: 0.2 });
             gsap.from("footer", { duration: 1, opacity: 0, y: 50 });
         </script>
     </body>
