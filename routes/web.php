@@ -52,7 +52,7 @@ function checkLiveStatus()
 
     if (isset($liveStatusData['items']) && count($liveStatusData['items']) > 0) {
         $liveVideoId = $liveStatusData['items'][0]['id']['videoId'];
-        return "https://www.youtube.com/watch?v=$liveVideoId";
+        return "https://www.youtube.com/embed/$liveVideoId";
     } else {
         $latestVideoResponse = Http::get("https://www.googleapis.com/youtube/v3/search", [
             'key' => $apiKey,
@@ -65,7 +65,7 @@ function checkLiveStatus()
 
         if (isset($latestVideoData['items']) && count($latestVideoData['items']) > 0) {
             $latestVideoId = $latestVideoData['items'][0]['id']['videoId'];
-            return "https://www.youtube.com/watch?v=$latestVideoId";
+            return "https://www.youtube.com/embed/$latestVideoId";
         }
     }
 
