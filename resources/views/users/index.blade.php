@@ -40,7 +40,7 @@
                                         <form :action="'/users/' + user.id + 'destroy/'" method="POST" class="inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-error text-white" onclick="return confirm('Are you sure?')">Supprimer</button>
+                                            <button type="submit" class="btn btn-error text-white" onclick="return confirm('Vous êtes sur ?')">Supprimer</button>
                                         </form>
                                     </div>
                                 </div>
