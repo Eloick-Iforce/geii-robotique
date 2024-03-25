@@ -23,11 +23,6 @@ class UserController extends Controller
         return view('users.index')->with('users', $users);
     }
 
-    public function show()
-    {
-        return null;
-    }
-
     /**
      * Delete a user.
      *
