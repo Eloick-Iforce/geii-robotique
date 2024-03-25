@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Recontres Robotique GEII') }}</title>
+        <link rel="icon" href="{{ asset('img/geii.png') }}"/>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -34,7 +35,7 @@
                 {{ $slot }}
             </main>
 
-            <footer class="p-8 bg-gray-200 w-full">
+            <footer class="p-8 bg-[#2fc0cc] text-white w-full">
                 <p class="text-center">© 2024 - Rencontres de Robotique GEII - Créé par <a href="https://eloick.fr" target="blank" class="underline text-red-500">Eloïck </a></p>
             </footer>
         </div>

@@ -23,11 +23,15 @@
             @endif
 
 
-            <header class="min-h-screen flex justify-between items-center">
-                <img src="{{ asset("img/robot.png")}}" class="h-[30%] w-[30%]">
-                <div class="w-2/3">
-                <h1 class=" text-8xl font-bold">Rencontres de Robotique GEII</h1>
-                <p class=" text-2xl">Bienvenue sur le site des rencontres de robotique GEII</p>
+            <header class="w-full min-h-screen flex justify-center items-center gap-32">
+
+                <img src="{{ asset("img/geii.png")}}">
+                <div class="w-96">
+                  <h1 class="text-6xl font-bold">Rencontres de Robotique</h1>
+                  <div class="text-green-400">
+                  <p class="text-2xl">GeSi</p>
+                  <p class="text-2xl">Association des départements GEII des IUT de France</p>
+                  </div>
                 </div>
             </header>
 
@@ -81,32 +85,33 @@
                     </li>
                   </ul>
 
+                  <div class="my-8">
+                    <p class="mb-8 font-bold text-2xl">Regardez la compétition en direct :</p>
+                  <iframe width="560" height="315" src="{{ $liveStatus }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
-                        <img src="https://placehold.co/600x400" alt="Image 1" class="w-full h-full object-cover">
+                        <img src={{ asset("img/csm_IMG_0428_c8b0bb3be1.jpg")}} alt="Image 1" width="600" height="400"  class="w-full h-full object-cover">
                     </div>
                     <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
-                        <img src="https://placehold.co/600x400" alt="Image 2" class="w-full h-full object-cover">
+                      <img src={{ asset("img/csm_IMG_0467_9593c8c289.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover">
                     </div>
                     <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
-                        <img src="https://placehold.co/600x400" alt="Image 3" class="w-full h-full object-cover">
+                      <img src={{ asset("img/csm_IMG_0470_1a5801ed12.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover">
                     </div>
                     <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
-                        <img src="https://placehold.co/600x400" alt="Image 4" class="w-full h-full object-cover">
-                    </div>
-                    <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
-                        <img src="https://placehold.co/600x400" alt="Image 5" class="w-full h-full object-cover">
-                    </div>
-                    <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
-                        <img src="https://placehold.co/600x400" alt="Image 6" class="w-full h-full object-cover">
-                    </div>
+                      <img src={{ asset("img/csm_IMG_0428_c8b0bb3be1.jpg")}} alt="Image 1" width="600" height="400"  class="w-full h-full object-cover">
+                  </div>
+                  <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
+                    <img src={{ asset("img/csm_IMG_0467_9593c8c289.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover">
+                  </div>
+                  <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
+                    <img src={{ asset("img/csm_IMG_0470_1a5801ed12.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover">
+                  </div>
+                  
                 </div>
 
-
-                <div class="mt-8">
-                  <p class="mb-8 font-bold text-2xl">Regardez la compétition en direct :</p>
-                <iframe width="560" height="315" src="{{ $liveStatus }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
 
 
             </main>
@@ -115,7 +120,7 @@
     
 
 
-        <footer class="p-8 bg-gray-200 w-full">
+        <footer class="p-8 bg-[#2fc0cc] text-white w-full">
             <p class="text-center">© 2024 - Rencontres de Robotique GEII - Créé par <a href="https://eloick.fr" target="blank" class="underline text-red-500">Eloïck </a></p>
         </footer>
 

@@ -35,32 +35,32 @@ use TeamTeaTime\Forum\Support\Web\Forum;
 */
 
 
-function checkLiveStatus()
-{
-    $apiKey = env('YOUTUBE_API_KEY');
+// function checkLiveStatus()
+// {
+//     $apiKey = env('YOUTUBE_API_KEY');
 
-    $channelId = "UCwxcXL4gn7oxhJI6JfMy61A";
+//     $channelId = "UCwxcXL4gn7oxhJI6JfMy61A";
 
-    $liveStatusResponse = Http::get("https://www.googleapis.com/youtube/v3/search", [
-        'key' => $apiKey,
-        'channelId' => $channelId,
-        'eventType' => 'live',
-        'type' => 'video'
-    ]);
+//     $liveStatusResponse = Http::get("https://www.googleapis.com/youtube/v3/search", [
+//         'key' => $apiKey,
+//         'channelId' => $channelId,
+//         'eventType' => 'live',
+//         'type' => 'video'
+//     ]);
 
-    $liveStatusData = $liveStatusResponse->json();
+//     $liveStatusData = $liveStatusResponse->json();
 
-    if (isset($liveStatusData['items']) && count($liveStatusData['items']) > 0) {
-        $liveVideoId = $liveStatusData['items'][0]['id']['videoId'];
-        return "https://www.youtube.com/embed/$liveVideoId";
-    } else {
-        return "https://www.youtube.com/embed/jtr9OzcYE6E";
-    }
+//     if (isset($liveStatusData['items']) && count($liveStatusData['items']) > 0) {
+//         $liveVideoId = $liveStatusData['items'][0]['id']['videoId'];
+//         return "https://www.youtube.com/embed/$liveVideoId";
+//     } else {
+//         return "https://www.youtube.com/embed/jtr9OzcYE6E";
+//     }
 
-    return 'Aucune chaîne correspondante trouvée';
-};
+//     return 'Aucune chaîne correspondante trouvée';
+// };
 
-Route::view('/', 'welcome', ['liveStatus' => $liveStatus = checkLiveStatus()])
+Route::view('/', 'welcome', ['liveStatus' => $liveStatus ?? 'https://www.youtube.com/embed/jtr9OzcYE6E'])
     ->name('welcome');
 
 
