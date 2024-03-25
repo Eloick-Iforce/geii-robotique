@@ -23,17 +23,17 @@
             @endif
 
 
-            <header class="w-full min-h-screen flex justify-center items-center gap-32">
-
-                <img src="{{ asset("img/geii.png")}}">
-                <div class="w-96">
-                  <h1 class="text-6xl font-bold">Rencontres de Robotique</h1>
-                  <div class="text-green-400">
+            <header class="w-full min-h-screen flex flex-col md:flex-row justify-center items-center gap-32">
+              <img src="{{ asset("img/geii.png")}}" class="w-64 lg:w-auto">
+              <div class="w-96">
+                <h1 class="text-6xl font-bold">Rencontres de Robotique</h1>
+                <div class="text-green-400">
                   <p class="text-2xl">GeSi</p>
                   <p class="text-2xl">Association des départements GEII des IUT de France</p>
-                  </div>
                 </div>
+              </div>
             </header>
+
 
             <main class="flex flex-col items-center justify-center mb-16">
 
