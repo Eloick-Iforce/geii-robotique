@@ -39,7 +39,8 @@
                                         </form>
                                         <form :action="'/users/' + user.id + '/destroy'" method="POST" class="inline">
                                             @csrf
-                                            @method('GET')
+                                            @method('DELETE')
+                                            <input type="hidden" name="id" x-model="user.id">
                                             <button type="submit" class="btn btn-error text-white" onclick="return confirm('Vous êtes sur ?')">Supprimer</button>
                                         </form>
                                     </div>
