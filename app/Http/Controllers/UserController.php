@@ -45,7 +45,7 @@ class UserController extends Controller
     public function verify(User $user)
     {
         Resend::emails()->send([
-            'from' => 'GEII Rencontres Robotique <geii-robotique@eloick.fr>',
+            'from' => 'GEII Rencontres Robotique <geii-robotique@mmi-unistra.fr>',
             'to' => [$user->email],
             'subject' => 'Votre compte est maintenant vérifié',
             'html' => "<p>Votre compte sur GEII Robotique est maintenant vérifié.</p>
