@@ -31,8 +31,7 @@
             </div>
 
             <div class="mb-4">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="title">Nombre de membre de l'équipe (80€ par étudiant en dessous de 6, 40 € par étudiant
-                    supplémentaire):</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="title">Nombre de membre de l'équipe (80 euros en dessous de 7,  40 euros par étudiant supplémentaire (à partir du 7ème) ):</label>
                 <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="number" name="number_of_members" id="title" required min="1">
             </div>
 

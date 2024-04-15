@@ -88,7 +88,7 @@
                   </ul>
 
                   <div class="my-8">
-                    <p class="mb-8 font-bold text-2xl">Regardez la compétition en direct :</p>
+                    <p class="mb-8 font-bold text-2xl">Vidéo de présentation :</p>
                   <iframe width="560" height="315" src="{{ $liveStatus }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
 
@@ -103,14 +103,14 @@
                       <img src={{ asset("img/csm_IMG_0470_1a5801ed12.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover">
                     </div>
                     <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
-                      <img src={{ asset("img/csm_IMG_0428_c8b0bb3be1.jpg")}} alt="Image 1" width="600" height="400"  class="w-full h-full object-cover">
-                  </div>
-                  <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
-                    <img src={{ asset("img/csm_IMG_0467_9593c8c289.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover">
-                  </div>
-                  <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
-                    <img src={{ asset("img/csm_IMG_0470_1a5801ed12.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover">
-                  </div>
+                      <img src={{ asset("img/20230609_132204.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover" style="height: 400px; object-fit: cover;">
+                    </div>
+                    <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
+                      <img src={{ asset("img/20230609_132235.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover" style="height: 400px; object-fit: cover;">
+                    </div>
+                    <div class="relative overflow-hidden bg-gray-200 dark:bg-gray-700 rounded-lg">
+                      <img src={{ asset("img/20230610_134913.jpg")}} alt="Image 1" width="600" height="400" class="w-full h-full object-cover" style="height: 400px; object-fit: cover;">
+                    </div>
                   
                 </div>
 

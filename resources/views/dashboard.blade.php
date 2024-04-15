@@ -3,7 +3,7 @@
     <div class="py-12">
         <div class=" mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+                <div class="p-6 text-gray-900 dark:text-gray-100 ">
                     @if (Auth::user()->is_verified)
                         <h2 class="text-2xl font-bold" id="welcome">Bienvenue {{ Auth::user()->name }} sur votre espace</h2>
                         @if (Auth::user()->billing_address)
@@ -87,10 +87,12 @@
                             </div>
                         </div>
                         @else
-                            <p class="text-xl mb-8">Vous n'avez pas d'adresse de facturation associée, merci d'en rajouter une</p>
-                            <a href="{{ route('billingadress.create') }}" class="btn-add">
+                        <div class="mt-8 flex flex-col justify-center items-center h-[80vh]">
+                            <h2 class="text-4xl font-bold mb-4">Avant d'aller plus loin, merci de rajouter une adresse de facturation</h2>
+                            <a href="{{ route('billingadress.create') }}" class="text-xl font-bold btn btn-primary btn-outline">
                                 Ajouter une adresse de facturation
                             </a>
+                        </div>
                         @endif
                     @else
                     <h2 class="text-2xl font-bold text-center">Votre compte n'est pas encore vérifié</h2>
