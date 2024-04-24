@@ -163,6 +163,16 @@ $total = $totalprof + $totaletu + $total_cost;
                     <td>{{ $total }}€</td>
                 </tr>
             </table>
+            <p>
+                Lorsque votre inscription ne sera plus sujette à modification, vous devez envoyer un bon de commande (EJ-engagement juridique) du montant du devis qui confirmera l'inscription aux 2 adresses mail suivantes :
+                <ul>
+                    <li>
+                frc@plateforme37.com</li>
+                <li>
+                monique.thomas@u-bordeaux.fr
+                </li>
+                </ul>
+            </p>
         </div>
     </div>
 
