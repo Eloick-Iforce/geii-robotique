@@ -59,7 +59,7 @@ class GenerateInvoiceController extends Controller
         Resend::emails($url_fichier)->send([
             'from' => 'GEII Rencontres Robotique <geii-robotique@mmi-unistra.fr>',
             'to' => [auth()->user()->email, 'imbert@unistra.fr', "monique.thomas@u-bordeaux.fr", "frc@plateforme37.com"],
-            'subject' => 'Voici votre facture pour l\'équipe ' . $team->name,
+            'subject' => 'Voici votre devis pour l\'équipe ' . $team->name,
             'html' => view('invoices.mail', ['url' => $url_fichier])->render(),
         ]);
 
